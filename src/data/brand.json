@@ -1,0 +1,41 @@
+{
+    "client": "StreetWorks Exotics",
+    "tagline": "Resurrecting Legends.",
+    "colors": {
+        "background": "#0a0a0a",
+        "text": "#f5f5f5",
+        "accent": "#d92323",
+        "surface": "#171717"
+    },
+    "typography": {
+        "heading": "Inter, sans-serif",
+        "body": "Inter, sans-serif"
+    },
+    "chapters": [
+        {
+            "id": "01",
+            "title": "Coachwork & Custom Fabrication",
+            "description": "Hand-rolled aluminum and precision TIG welding to rebuild history from the bare metal up."
+        },
+        {
+            "id": "02",
+            "title": "Mechanical & Electrical",
+            "description": "Period-correct power meets modern reliability. Every wire routed, every engine rebuilt to perfection."
+        },
+        {
+            "id": "03",
+            "title": "Body & Paint",
+            "description": "Flawless panels and glass-like finishes. Hundreds of hours culminating in a Concours-level coat."
+        },
+        {
+            "id": "04",
+            "title": "Interior & Upholstery",
+            "description": "Bespoke cabins tailored to the millimeter. Hand-stitched hides and sensory perfection."
+        },
+        {
+            "id": "05",
+            "title": "Detailing & Elite Maintenance",
+            "description": "The masterpiece is finished, but the relationship begins. Dedicated service to keep your legacy flawless."
+        }
+    ]
+}

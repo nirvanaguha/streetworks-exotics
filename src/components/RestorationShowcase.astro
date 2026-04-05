@@ -1,0 +1,126 @@
+---
+interface Props {
+  mainImgUrl: string;
+  year: string;
+  title: string;
+  textId: string;
+  gradientFrom: string;
+  gradientTo: string;
+  linkUrl?: string;
+  ctaColor?: string;
+}
+
+const { mainImgUrl, year, title, textId, gradientFrom, gradientTo, linkUrl, ctaColor = "#ffffff" } = Astro.props;
+---
+
+<section class="relative w-full z-50">
+  
+  <div class="sticky top-0 w-full h-screen z-0 overflow-hidden pointer-events-none">
+    <img 
+      src={mainImgUrl} 
+      alt={`${year} ${title}`} 
+      class="w-full h-full object-cover scale-105" 
+    />
+    <div class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black via-transparent to-black/70"></div>
+  </div>
+
+  <div class="relative w-full z-10 -mt-[100vh] pt-[110vh]">
+    <div class="absolute top-[8vh] left-12 w-full max-w-4xl pt-[100vh]">
+      <span class="text-yellow-500 font-mono text-xs md:text-sm tracking-[0.5em] uppercase drop-shadow-lg">{year} Restoration</span>
+      <h3 class="text-6xl md:text-8xl lg:text-[7rem] font-bold tracking-tighter uppercase drop-shadow-xl leading-[0.8] mt-2">{title}</h3>
+    </div>
+
+    <div class="relative w-full bg-[#050505] pt-32 pb-48 px-6 md:px-12 mt-[30vh]">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+        
+        <div class="flex flex-col w-full">
+          
+          <div class="relative w-full h-[50vh] md:h-[65vh] z-20">
+            <div class="md:sticky md:top-[15vh] flex flex-col items-start">
+              <p 
+                id={textId} 
+                class="reveal-text text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.2] bg-clip-text"
+                style={`--grad-from: ${gradientFrom}; --grad-to: ${gradientTo};`}
+              >
+                <slot name="intro" />
+              </p>
+              
+              {linkUrl && (
+                <a 
+                  href={linkUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={`color: ${ctaColor};`}
+                  class="group inline-flex items-center gap-3 mt-10 hover:opacity-70 transition-opacity duration-300 pointer-events-auto"
+                >
+                  <span class="text-xs md:text-sm tracking-[0.2em] uppercase font-bold">See full restoration</span>
+                  <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+              )}
+            </div>
+          </div>
+
+          <div class="relative z-10 w-full mt-8 md:mt-0">
+            <slot name="gallery-left" />
+          </div>
+
+        </div>
+
+        <div class="flex flex-col gap-12 md:gap-24 w-full md:mt-48 z-10">
+          <slot name="gallery-right" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="image-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 opacity-0 pointer-events-none transition-opacity duration-500 backdrop-blur-md">
+  <button id="close-image-modal" class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-4 z-[110]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <img id="modal-img-target" src="" class="max-w-[90vw] max-h-[95vh] w-auto h-auto object-contain rounded-lg shadow-2xl" />
+</div>
+
+<style>
+  .reveal-text {
+    background-image: linear-gradient(
+      to bottom,
+      var(--grad-from) 0%,     
+      var(--grad-to) 40%,    
+      #666666 50%,    
+      #666666 100%    
+    );
+    background-size: 100% 200%;
+    background-position: 0% 100%; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background-position 0.1s linear;
+  }
+</style>
+
+<script>
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img-target') as HTMLImageElement;
+  const closeModalBtn = document.getElementById('close-image-modal');
+
+  if (modal && modalImg && closeModalBtn) {
+    const galleryItems = document.querySelectorAll('.gallery-zoomable');
+    galleryItems.forEach(item => {
+      const img = item.querySelector('img') as HTMLImageElement;
+      item.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden'; 
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = ''; 
+    });
+  }
+</script>

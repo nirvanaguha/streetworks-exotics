@@ -1,0 +1,67 @@
+---
+import brand from '../data/brand.json';
+const heroBgUrl = "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=3000&auto=format&fit=crop"; 
+---
+
+<div class="absolute inset-0 w-full h-full bg-[#111] z-0"></div>
+
+<div id="white-canvas" class="absolute inset-0 w-full h-full bg-white z-[1]"></div>
+
+<div id="hero-bg-wrapper" class="absolute inset-0 w-full h-full z-10 will-change-opacity">
+  <img 
+    src={heroBgUrl} 
+    alt="Cinematic Background" 
+    class="w-full h-full object-cover opacity-100"
+  />
+  <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
+</div>
+
+<div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+  <svg 
+    id="logo-svg" 
+    class="w-full h-full opacity-0" 
+    viewBox="-24 -13.5 48 27" 
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <mask id="text-mask">
+        <rect x="-10000" y="-10000" width="20000" height="20000" fill="white" />
+        <text x="0" y="-160" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="260" letter-spacing="-0.02em" fill="black">STREETWORKS</text>
+        <text x="0" y="160" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="260" letter-spacing="-0.02em" fill="black">EXOTICS</text>
+      </mask>
+    </defs>
+    <rect x="-10000" y="-10000" width="20000" height="20000" fill="#050505" mask="url(#text-mask)" />
+  </svg>
+</div>
+
+<div id="hero-ui" class="absolute inset-0 z-30 flex flex-col items-center justify-center p-6 pointer-events-none">
+  <h1 class="hero-stagger text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center uppercase drop-shadow-2xl mb-4">
+    {brand.client}
+  </h1>
+  <p class="hero-stagger text-xs md:text-sm font-light tracking-[0.4em] text-white/80 uppercase text-center mb-10">
+    {brand.tagline}
+  </p>
+  
+  <div class="hero-stagger pointer-events-auto">
+    <button id="play-btn" class="group relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white hover:scale-105 transition-all duration-500 cursor-pointer shadow-2xl">
+      <svg class="w-10 h-10 md:w-14 md:h-14 text-white group-hover:text-black transition-colors duration-500 translate-x-[2px] md:translate-x-[3px]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 hero-stagger opacity-0">
+    <span class="text-[10px] uppercase tracking-[0.5em] font-light text-white/50">Scroll</span>
+    <div class="w-[1px] h-12 bg-white/10 overflow-hidden">
+      <div class="w-full h-full bg-white origin-top animate-[scrolldown_2s_ease-in-out_infinite]"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes scrolldown {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+  }
+</style>

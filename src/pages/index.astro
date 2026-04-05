@@ -1,17 +1,333 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import SmoothScroll from '../components/SmoothScroll.astro';
+import VideoModal from '../components/VideoModal.astro';
+import HeroSequence from '../components/HeroSequence.astro';
+import AwardsGrid from '../components/AwardsGrid.astro';
+import TextReveal from '../components/TextReveal.astro';
+import RestorationShowcase from '../components/RestorationShowcase.astro';
+import ServiceSection from '../components/ServiceSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import brand from '../data/brand.json';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={brand.client}>
+  <SmoothScroll />
+  <VideoModal />
+  <NavBar /> <main class="relative w-full bg-[#050505] text-white">
+
+  <main class="relative w-full bg-[#050505] text-white">
+    <section id="hero-pin" class="relative w-full h-screen overflow-hidden bg-[#050505]">
+      <HeroSequence />
+      <AwardsGrid />
+    </section>
+    
+    <TextReveal id="text-1" gradientFrom="#ff2a00" gradientTo="#800000">
+      StreetWorks was founded in 1999 by Matt Backhaus. We initially shared shop space with a British car service specialist in Waukesha and expanded to our current location in Pewaukee, Wisconsin, in 2022. Our early work included restoring Jaguars and Triumphs.
+    </TextReveal>
+
+    <RestorationShowcase 
+      year="1967" 
+      title="Iso Grifo 350GT" 
+      mainImgUrl="/Restored-1967-Iso-Grifo-4.jpg" 
+      textId="iso-text"
+      gradientFrom="#facc15" 
+      gradientTo="#ca8a04"
+      linkUrl="https://streetworksexotics.com/1967-iso-grifo-restoration/"
+      ctaColor="#facc15"
+    >
+      <span slot="intro">
+        In 2004, we showcased our first restoration of an Iso Grifo 350GT at Pebble Beach.
+      </span>
+
+      <div slot="gallery-left" class="contents">
+        <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-11/12 ml-auto aspect-[4/5] mt-12 md:mt-32">
+          <img src="/Restored-1967-Iso-Grifo-Engine.jpg" alt="Engine Restoration" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
+          <div class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <div slot="gallery-right" class="contents">
+        <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-full aspect-square">
+          <img src="/Restored-1967-Iso-Grifo-Body.jpg" alt="Body Work" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
+          <div class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+        </div>
+        
+        <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-10/12 mr-auto aspect-[3/4]">
+          <img src="/Restored-1967-Iso-Grifo-4.jpg" alt="Full Restoration" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
+          <div class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+        </div>
+      </div>
+    </RestorationShowcase>
+
+    <TextReveal id="text-2" gradientFrom="#facc15" gradientTo="#ca8a04">
+      Today, we restore and service some of the world's most interesting and valuable cars, including a Lamborghini from the former Shah of Iran.
+    </TextReveal>
+
+    <RestorationShowcase 
+      year="1966" 
+      title="Jensen CV8 MkIII" 
+      mainImgUrl="/Jensen-CV8-MKIII-10.jpg" 
+      textId="jensen-text"
+      gradientFrom="#ffffff" 
+      gradientTo="#94a3b8"
+      linkUrl="https://streetworksexotics.com/the-incredible-restoration-journey-of-the-jensen-cv8-mkiii/"
+      ctaColor="#cbd5e1"
+    >
+      <span slot="intro">
+        At StreetWorks, we deliver exceptional automobile restorations. We are dedicated to preserving the cars you love, specializing in Post-War vehicles.
+      </span>
+
+      <div slot="gallery-left" class="contents">
+        <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-11/12 ml-auto aspect-[4/5] mt-12 md:mt-32">
+          <img src="/Jensen-CV8-MKIII-Restored.jpg" alt="Jensen Restoration Process" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
+          <div class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <div slot="gallery-right" class="contents">
+        <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-full aspect-square">
+          <img src="/Jensen-CV8-MKIII-Interior.jpg" alt="Jensen Interior" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
+          <div class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+        </div>
+        
+        <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-10/12 mr-auto aspect-[3/4]">
+          <img src="/Jensen-CV8-MKIII-Engine.jpg" alt="Jensen Engine" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
+          <div class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+        </div>
+      </div>
+    </RestorationShowcase>
+    <TextReveal id="text-3" gradientFrom="#ffffff" gradientTo="#a1a1aa">
+      Our extensive expertise ensures that everything from Sports and GTs to Vintage Racecars, Muscle Cars, and Hot Rods are revived and returned to you in pristine condition.
+    </TextReveal>
+
+    <ServiceSection 
+      title="Body & Paint"
+      description="Flawless surface preparation and period-correct color matching for a concours-quality finish."
+      bgImgUrl="/services/body-paint-bg.jpg"
+      serviceUrl="/services/body-paint"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/body-paint-1.jpg", "/services/body-paint-2.jpg", "/services/body-paint-3.jpg", "/services/body-paint-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/body-paint-5.jpg", "/services/body-paint-6.jpg", "/services/body-paint-7.jpg", "/services/body-paint-8.jpg"
+      ]}
+    />
+
+    <ServiceSection 
+      title="Coachwork"
+      description="Expert metal shaping and panel restoration to revive the original structural integrity and sweeping lines."
+      bgImgUrl="/services/coachwork-bg.jpg"
+      serviceUrl="/services/coachwork"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/coachwork-1.jpg", "/services/coachwork-2.jpg", "/services/coachwork-3.jpg", "/services/coachwork-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/coachwork-5.jpg", "/services/coachwork-6.jpg", "/services/coachwork-7.jpg", "/services/coachwork-8.jpg"
+      ]}
+    />
+
+    <ServiceSection 
+      title="Interior & Upholstery"
+      description="Hand-stitched leathers, period-accurate fabrics, and bespoke cabin restorations tailored to perfection."
+      bgImgUrl="/services/interior-bg.jpg"
+      serviceUrl="/services/interior"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/interior-1.jpg", "/services/interior-2.jpg", "/services/interior-3.jpg", "/services/interior-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/interior-5.jpg", "/services/interior-6.jpg", "/services/interior-7.jpg", "/services/interior-8.jpg"
+      ]}
+    />
+
+    <ServiceSection 
+      title="Mechanical & Electrical"
+      description="Precision engine rebuilds and modern wiring solutions hidden gracefully beneath vintage aesthetics."
+      bgImgUrl="/services/mechanical-bg.jpg"
+      serviceUrl="/services/mechanical"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/mechanical-1.jpg", "/services/mechanical-2.jpg", "/services/mechanical-3.jpg", "/services/mechanical-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/mechanical-5.jpg", "/services/mechanical-6.jpg", "/services/mechanical-7.jpg", "/services/mechanical-8.jpg"
+      ]}
+    />
+
+    <ServiceSection 
+      title="Custom Welding & Fabrication"
+      description="Bespoke metalwork and expert TIG/MIG welding for chassis repair, strengthening, and custom modifications."
+      bgImgUrl="/services/fabrication-bg.jpg"
+      serviceUrl="/services/fabrication"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/fabrication-1.jpg", "/services/fabrication-2.jpg", "/services/fabrication-3.jpg", "/services/fabrication-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/fabrication-5.jpg", "/services/fabrication-6.jpg", "/services/fabrication-7.jpg", "/services/fabrication-8.jpg"
+      ]}
+    />
+
+    <ServiceSection 
+      title="Service & Maintenance"
+      description="Routine care, tuning, and expert diagnostics to keep your post-war exotics running flawlessly."
+      bgImgUrl="/services/maintenance-bg.jpg"
+      serviceUrl="/services/maintenance"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/maintenance-1.jpg", "/services/maintenance-2.jpg", "/services/maintenance-3.jpg", "/services/maintenance-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/maintenance-5.jpg", "/services/maintenance-6.jpg", "/services/maintenance-7.jpg", "/services/maintenance-8.jpg"
+      ]}
+    />
+
+    <ServiceSection 
+      title="Detailing Service"
+      description="Museum-grade paint correction, preservation, and deep cleaning to elevate your vehicle's presentation."
+      bgImgUrl="/services/detailing-bg.jpg"
+      serviceUrl="/services/detailing"
+      bookingUrl="#contact-section"
+      galleryRow1={[
+        "/services/detailing-1.jpg", "/services/detailing-2.jpg", "/services/detailing-3.jpg", "/services/detailing-4.jpg"
+      ]}
+      galleryRow2={[
+        "/services/detailing-5.jpg", "/services/detailing-6.jpg", "/services/detailing-7.jpg", "/services/detailing-8.jpg"
+      ]}
+    />
+    <ContactSection />
+  </main>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { calculateCameraViewBox } from '../utils/cameraMath.js';
+  import { createTextReveal } from '../utils/textRevealAnimation.js';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initial Load Animation
+  gsap.from('.hero-stagger', {
+    y: 30, opacity: 0, duration: 1.5, stagger: 0.15, ease: "power4.out", delay: 0.2 
+  });
+  
+  const dynamicViewBox = calculateCameraViewBox(5.5, 160);
+
+  // ==========================================
+  // MASTER SCROLL TIMELINE
+  // ==========================================
+  const scrollTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#hero-pin",
+      start: "top top",
+      end: "+=500%", 
+      scrub: 1,      
+      pin: true,     
+    }
+  });
+
+  scrollTl.to("#hero-ui", { opacity: 0, duration: 0.4, ease: "power2.out" }, 0);
+  scrollTl.to("#logo-svg", { opacity: 1, duration: 0.1 }, 0);
+
+  scrollTl.to("#logo-svg", {
+    attr: { viewBox: "-960 -540 1920 1080" },
+    duration: 2.0,
+    ease: "power2.inOut"
+  }, 0.2);
+
+  scrollTl.to("#logo-svg", {
+    attr: { viewBox: dynamicViewBox },
+    duration: 1.5,
+    ease: "power2.inOut"
+  }, 2.5);
+
+  scrollTl.to("#hero-bg-wrapper", {
+    opacity: 0,
+    duration: 1.2,
+    ease: "none"
+  }, 4.2);
+
+  scrollTl.to("#white-canvas", {
+    opacity: 0.15,
+    duration: 1.2,
+    ease: "none"
+  }, 5.4);
+
+  scrollTl.fromTo("#awards-section", 
+    { y: 40, autoAlpha: 0 }, 
+    { y: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out" }, 
+    5.4 
+  );
+
+  // ==========================================
+  // ABOUT SECTION TEXT REVEAL
+  // ==========================================
+  ["text-1", "iso-text", "text-2", "jensen-text", "text-3"].forEach(createTextReveal);
+
+  // ==========================================
+  // GALLERY MASONRY PARALLAX (INTENSIFIED)
+  // ==========================================
+  gsap.utils.toArray('.gallery-zoomable').forEach((container, index) => {
+    
+    // The Magic: Alternate travel distances so images slide past each other
+    const travelDistance = index % 2 === 0 ? 180 : 80; 
+
+    gsap.fromTo(container, 
+      { y: travelDistance }, 
+      {
+        y: -travelDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom", 
+          end: "bottom top",   
+          scrub: 1.2 // Increased scrub slightly to give it a heavier, more luxurious "float"
+        }
+      }
+    );
+  });
+
+  // ==========================================
+  // SERVICES BACKGROUND PARALLAX
+  // ==========================================
+  gsap.utils.toArray('.service-section').forEach((section) => {
+    const bg = section.querySelector('.service-bg');
+    
+    gsap.fromTo(bg, 
+      { y: "-10%" }, // Starts slightly pulled up
+      {
+        y: "10%",    // Finishes slightly pushed down
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      }
+    );
+  });
+</script>
