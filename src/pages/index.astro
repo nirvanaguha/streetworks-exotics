@@ -311,20 +311,55 @@ import brand from '../data/brand.json';
   });
 
   // ==========================================
-  // SERVICES BACKGROUND PARALLAX
+  // SERVICES STACKING, PARALLAX & FADE LOGIC
   // ==========================================
   gsap.utils.toArray('.service-section').forEach((section) => {
     const bg = section.querySelector('.service-bg');
+    const uiLayer = section.querySelector('.service-ui-layer');
+    const bgLayer = section.querySelector('.service-bg-layer');
     
+    // 1. Background Parallax (Preserved)
     gsap.fromTo(bg, 
-      { y: "-10%" }, // Starts slightly pulled up
+      { y: "-10%" }, 
       {
-        y: "10%",    // Finishes slightly pushed down
+        y: "10%",    
         ease: "none",
         scrollTrigger: {
           trigger: section,
           start: "top bottom",
           end: "bottom top",
+          scrub: true
+        }
+      }
+    );
+
+    // 2. ENTRY: Fade-in as it scrolls up the screen
+    gsap.fromTo([uiLayer, bgLayer], 
+      { opacity: 0 }, 
+      {
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom", // Starts fading in when it peeks at the bottom
+          end: "top 20%",      // Reaches 100% opacity before it hits the top
+          scrub: true
+        }
+      }
+    );
+
+    // 3. EXIT: Sink and fade-out as the next section covers it
+    gsap.fromTo([uiLayer, bgLayer],
+      { opacity: 1, y: 0, scale: 1 },
+      {
+        opacity: 0,
+        y: -100,       // Pushes upward into the shadow
+        scale: 0.95,   // Sinks backward in 3D space
+        ease: "power2.inOut", 
+        scrollTrigger: {
+          trigger: section,
+          start: "top top", // Starts exiting exactly when it pins to the top
+          end: "+=60%",     // Drops to pure black over the next scroll motion
           scrub: true
         }
       }
