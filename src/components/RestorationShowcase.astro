@@ -13,63 +13,62 @@ interface Props {
 const { mainImgUrl, year, title, textId, gradientFrom, gradientTo, linkUrl, ctaColor = "#ffffff" } = Astro.props;
 ---
 
-<section class="relative w-full z-50">
+<section class="relative w-full z-50 bg-black">
   
-  <div class="sticky top-0 w-full h-screen z-0 overflow-hidden pointer-events-none">
-    <img 
-      src={mainImgUrl} 
-      alt={`${year} ${title}`} 
-      class="w-full h-full object-cover scale-105" 
-    />
-    <div class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black via-transparent to-black/70"></div>
-  </div>
+  <div class="sticky top-0 w-full h-screen z-0 overflow-hidden pointer-events-none flex flex-col justify-end pb-[15vh]">
+    <div class="absolute inset-0 w-full h-full">
+        <img 
+          src={mainImgUrl} 
+          alt={`${year} ${title}`} 
+          class="showcase-bg w-full h-full object-cover scale-[1.15]" 
+        />
+        <div class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black via-transparent to-black/80"></div>
+    </div>
 
-  <div class="relative w-full z-10 -mt-[100vh] pt-[110vh]">
-    <div class="absolute top-[8vh] left-12 w-full max-w-4xl pt-[100vh]">
+    <div class="relative z-10 px-6 md:px-12 w-full max-w-7xl mx-auto">
       <span class="text-yellow-500 font-mono text-xs md:text-sm tracking-[0.5em] uppercase drop-shadow-lg">{year} Restoration</span>
       <h3 class="text-6xl md:text-8xl lg:text-[7rem] font-bold tracking-tighter uppercase drop-shadow-xl leading-[0.8] mt-2">{title}</h3>
     </div>
+  </div>
 
-    <div class="relative w-full bg-[#050505] pt-32 pb-48 px-6 md:px-12 mt-[30vh]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
-        
-        <div class="flex flex-col w-full">
-          
-          <div class="relative w-full h-[50vh] md:h-[65vh] z-20">
-            <div class="md:sticky md:top-[15vh] flex flex-col items-start">
-              <p 
-                id={textId} 
-                class="reveal-text text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.2] bg-clip-text"
-                style={`--grad-from: ${gradientFrom}; --grad-to: ${gradientTo};`}
+  <div class="relative w-full z-10 mt-[100vh] bg-black pt-24 pb-48 px-6 md:px-12">
+    <div class="absolute top-0 left-0 w-full h-48 -mt-48 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+      
+      <div class="flex flex-col w-full">
+        <div class="relative w-full h-[50vh] md:h-[65vh] z-20">
+          <div class="md:sticky md:top-[15vh] flex flex-col items-start">
+            <p 
+              id={textId} 
+              class="reveal-text text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.2] bg-clip-text"
+              style={`--grad-from: ${gradientFrom}; --grad-to: ${gradientTo};`}
+            >
+              <slot name="intro" />
+            </p>
+            
+            {linkUrl && (
+              <a 
+                href={linkUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={`color: ${ctaColor};`}
+                class="group inline-flex items-center gap-3 mt-10 hover:opacity-70 transition-opacity duration-300 pointer-events-auto"
               >
-                <slot name="intro" />
-              </p>
-              
-              {linkUrl && (
-                <a 
-                  href={linkUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  style={`color: ${ctaColor};`}
-                  class="group inline-flex items-center gap-3 mt-10 hover:opacity-70 transition-opacity duration-300 pointer-events-auto"
-                >
-                  <span class="text-xs md:text-sm tracking-[0.2em] uppercase font-bold">See full restoration</span>
-                  <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </a>
-              )}
-            </div>
+                <span class="text-xs md:text-sm tracking-[0.2em] uppercase font-bold">See full restoration</span>
+                <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </a>
+            )}
           </div>
-
-          <div class="relative z-10 w-full mt-8 md:mt-0">
-            <slot name="gallery-left" />
-          </div>
-
         </div>
 
-        <div class="flex flex-col gap-12 md:gap-24 w-full md:mt-48 z-10">
-          <slot name="gallery-right" />
+        <div class="relative z-10 w-full mt-8 md:mt-0">
+          <slot name="gallery-left" />
         </div>
+      </div>
 
+      <div class="flex flex-col gap-12 md:gap-24 w-full md:mt-48 z-10">
+        <slot name="gallery-right" />
       </div>
     </div>
   </div>
@@ -85,19 +84,21 @@ const { mainImgUrl, year, title, textId, gradientFrom, gradientTo, linkUrl, ctaC
 <style>
   .reveal-text {
     background-image: linear-gradient(
-      to bottom,
-      var(--grad-from) 0%,     
-      var(--grad-to) 40%,    
-      #666666 50%,    
-      #666666 100%    
+      to bottom, 
+      var(--grad-from) 0%, 
+      var(--grad-to) 45%, /* Pulled up slightly to ensure the dark bronze stays visible */
+      #222 55%, /* Softened the edge so the light bleeds into the dark text */
+      #222 100%
     );
+    
+    /* THE FIX: Exactly 200% height so the gradient perfectly matches the paragraph height */
     background-size: 100% 200%;
+    
     background-position: 0% 100%; 
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    transition: background-position 0.1s linear;
   }
 </style>
 

@@ -3,9 +3,7 @@ import brand from '../data/brand.json';
 const heroBgUrl = "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=3000&auto=format&fit=crop"; 
 ---
 
-<div class="absolute inset-0 w-full h-full bg-[#111] z-0"></div>
-
-<div id="white-canvas" class="absolute inset-0 w-full h-full bg-white z-[1]"></div>
+<div class="absolute inset-0 w-full h-full bg-black z-0"></div>
 
 <div id="hero-bg-wrapper" class="absolute inset-0 w-full h-full z-10 will-change-opacity">
   <img 
@@ -16,11 +14,15 @@ const heroBgUrl = "https://images.unsplash.com/photo-1583121274602-3e2820c69888?
   <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
 </div>
 
+<div id="hero-frost" class="absolute inset-0 z-15 pointer-events-none" style="backdrop-filter: blur(2px); background-color: rgba(255, 255, 255, 0); will-change: backdrop-filter, background-color;"></div>
+
+<div id="gradient-sweep" class="absolute inset-0 z-[18] opacity-0 pointer-events-none" style="background: linear-gradient(90deg, transparent 0%, rgba(250, 204, 21, 0.8) 50%, transparent 100%); background-size: 200% 100%; background-position: 200% 0;"></div>
+
 <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
   <svg 
     id="logo-svg" 
     class="w-full h-full opacity-0" 
-    viewBox="-24 -13.5 48 27" 
+    viewBox="-160 -250 320 180" 
     preserveAspectRatio="xMidYMid slice"
   >
     <defs>
