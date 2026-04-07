@@ -408,4 +408,24 @@ import brand from '../data/brand.json';
   }
 
   servicesTl.to({}, { duration: 1.0 });
+  // ==========================================
+  // NAVBAR AUTO-HIDE FOR SERVICES
+  // ==========================================
+  const mainNavbar = document.getElementById('main-navbar');
+  
+  if (mainNavbar) {
+    ScrollTrigger.create({
+      trigger: "#services-master-container",
+      start: "top top",
+      end: "bottom bottom",
+      // Slides up and fades out when entering the services
+      onEnter: () => gsap.to(mainNavbar, { autoAlpha: 0, yPercent: -100, duration: 0.4, ease: "power2.inOut" }),
+      // Slides down and fades in when leaving the bottom (to Contact)
+      onLeave: () => gsap.to(mainNavbar, { autoAlpha: 1, yPercent: 0, duration: 0.4, ease: "power2.inOut" }),
+      // Slides up and fades out when scrolling backward into the services from Contact
+      onEnterBack: () => gsap.to(mainNavbar, { autoAlpha: 0, yPercent: -100, duration: 0.4, ease: "power2.inOut" }),
+      // Slides down and fades in when scrolling backward out of services (to Reviews)
+      onLeaveBack: () => gsap.to(mainNavbar, { autoAlpha: 1, yPercent: 0, duration: 0.4, ease: "power2.inOut" })
+    });
+  }
 </script>
