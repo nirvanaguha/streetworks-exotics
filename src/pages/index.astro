@@ -7,6 +7,7 @@ import HeroSequence from '../components/HeroSequence.astro';
 import AwardsGrid from '../components/AwardsGrid.astro';
 import TextReveal from '../components/TextReveal.astro';
 import RestorationShowcase from '../components/RestorationShowcase.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
 import ServiceSection from '../components/ServiceSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import brand from '../data/brand.json';
@@ -31,7 +32,7 @@ import brand from '../data/brand.json';
           <AwardsGrid />
         </div>
         
-        <div id="text1-layer" class="absolute inset-0 z-30 opacity-0 invisible flex items-center justify-center max-w-5xl mx-auto px-6 text-center pointer-events-none">
+        <div id="text1-layer" class="absolute inset-0 z-30 opacity-0 invisible flex felx-col justify-center items-start max-w-5xl mx-auto px-6 md:px-12 pt-32 text-left pointer-events-none">
           <TextReveal 
             id="text-1" 
             gradientFrom="#ff2a00" 
@@ -88,7 +89,7 @@ import brand from '../data/brand.json';
 
     <div id="text2-container" class="relative w-full h-[350vh] bg-black -mt-[100vh] z-10">
       <div class="sticky top-0 w-full h-screen overflow-hidden z-10 flex items-center justify-center">
-        <div id="text2-layer" class="absolute inset-0 z-30 opacity-0 invisible flex items-center justify-center max-w-5xl mx-auto px-6 text-center pointer-events-none">
+        <div id="text2-layer" class="absolute inset-0 z-30 opacity-0 invisible flex flex-col justify-center items-start max-w-5xl mx-auto px-6 md:px-12 text-left pointer-events-none">
           <TextReveal 
             id="text-2" 
             gradientFrom="#fef08a" 
@@ -144,7 +145,7 @@ import brand from '../data/brand.json';
 
     <div id="text3-container" class="relative w-full h-[350vh] bg-black -mt-[100vh] z-10">
       <div class="sticky top-0 w-full h-screen overflow-hidden z-10 flex items-center justify-center">
-        <div id="text3-layer" class="absolute inset-0 z-30 opacity-0 invisible flex items-center justify-center max-w-5xl mx-auto px-6 text-center pointer-events-none">
+        <div id="text3-layer" class="absolute inset-0 z-30 opacity-0 invisible flex flex-col items-start justify-center max-w-5xl mx-auto px-6 md:px-12 text-left pointer-events-none">
           <TextReveal 
             id="text-3" 
             gradientFrom="#ffffff" 
@@ -155,15 +156,93 @@ import brand from '../data/brand.json';
       </div>
     </div>
 
-    <div class="relative z-[100] bg-black">
-      <ServiceSection title="Body & Paint" description="Flawless surface preparation and period-correct color matching for a concours-quality finish." bgImgUrl="/Blue-400GT-rear-scaled-1.jpg" serviceUrl="/services/body-paint" bookingUrl="#contact-section" galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} galleryRow2={["/Aintree-Green-Iso-Grifo-Series-I.jpg", "/1964-A3:C.jpg", "/Jensen-CV8-Finishing-Assembly-1.jpg", "/Porsche-356-Fresh-out-of-the-paint-booth-1.jpg"]} />
-      <ServiceSection title="Coachwork" description="Expert metal shaping and panel restoration to revive the original structural integrity and sweeping lines." bgImgUrl="Iso-Grifo-Series-I-Receiving-new-nose-1.jpg" serviceUrl="/services/coachwork" bookingUrl="#contact-section" galleryRow1={["/DeTomaso-Mangusta-Rebody.jpg", "/Fabrication-of-aluminum-hood-skin-over-frame.jpg", "/Ferrari-Cal-Spyder.jpg", "/Iso-Grifo-after-stripping-and-ready-for-metal-shop.jpg"]} galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} />
-      <ServiceSection title="Interior & Upholstery" description="Hand-stitched leathers, period-accurate fabrics, and bespoke cabin restorations tailored to perfection." bgImgUrl="/400-GT-interior-scaled-1.jpg" serviceUrl="/services/interior" bookingUrl="#contact-section" galleryRow1={["/Iso-Interiors.jpg", "/A3C Interior.jpg", "/Bizzarini.jpg", "/32-Hot-Rod-Custom-Interior.jpg"]} galleryRow2={["/Ferrari-Upholstery-scaled-1.jpg", "/Islero-S-upholstery-scaled-1.jpg", "/Lamborghini-Countach.jpg", "/Jensen-CV8.jpg"]} />
-      <ServiceSection title="Mechanical & Electrical" description="Precision engine rebuilds and modern wiring solutions hidden gracefully beneath vintage aesthetics." bgImgUrl="/Lamborghini-V12-Sidedraft-Weber-Carburetors.jpg" serviceUrl="/services/mechanical" bookingUrl="#contact-section" galleryRow1={["/Weber-II-2-scaled-1.jpg", "/Electrical-components-restored-to-the-highest-level-of-detail.jpg", "/Lamborghini-Countach-AC-Condenser.jpg", "/Lamborghini-V12-engine-on-test-stand.jpg"]} galleryRow2={["/Bosch-Alt-I-scaled-1.jpg", "/Engine-Work.jpg", "/Ford-Engine.jpg", "/1964-A3C.jpg", "/QV5000-Downdraft-Countach.jpg"]} />
-      <ServiceSection title="Custom Welding & Fabrication" description="Bespoke metalwork and expert TIG/MIG welding for chassis repair, strengthening, and custom modifications." bgImgUrl="/weld-promo-photo2.jpg" serviceUrl="/services/fabrication" bookingUrl="#contact-section" galleryRow1={["/Custom-Welding-I.jpg", "/Custom-stainless-header-fabrication.compressed-scaled.jpg", "/Custom-Tooling.jpg", "/Welding-Tool.jpg"]} galleryRow2={["/Custom-Welding-I.jpg", "/Custom-stainless-header-fabrication.compressed-scaled.jpg", "/Custom-Tooling.jpg", "/Welding-Tool.jpg"]} />
-      <ServiceSection title="Service & Maintenance" description="Routine care, tuning, and expert diagnostics to keep your post-war exotics running flawlessly." bgImgUrl="/Automobile-Service-and-Maintenance-in-Pewaukee.jpg" serviceUrl="/services/maintenance" bookingUrl="#contact-section" galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} />
-      <ServiceSection title="Detailing Service" description="Museum-grade paint correction, preservation, and deep cleaning to elevate your vehicle's presentation." bgImgUrl="/Automotive-Detailing-in-Pewaukee.jpg" serviceUrl="/services/detailing" bookingUrl="#contact-section" galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} />
-      <ContactSection />
+    <ReviewsSection />
+
+    <div id="services-master-container" class="relative w-full h-[1200vh] z-20 -mt-[100vh]">
+      <div class="sticky top-0 w-full h-screen overflow-hidden">
+        
+        <ServiceSection 
+          title="Body & Paint" 
+          tintColor="#800000" 
+          description="Flawless surface preparation and period-correct color matching for a concours-quality finish." 
+          bgImgUrl="/Blue-400GT-rear-scaled-1.jpg" 
+          serviceUrl="/services/body-paint" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} 
+          galleryRow2={["/Aintree-Green-Iso-Grifo-Series-I.jpg", "/1964-A3:C.jpg", "/Jensen-CV8-Finishing-Assembly-1.jpg", "/Porsche-356-Fresh-out-of-the-paint-booth-1.jpg"]} 
+        />
+        
+        <ServiceSection 
+          title="Coachwork" 
+          tintColor="#b45309" 
+          description="Expert metal shaping and panel restoration to revive the original structural integrity and sweeping lines." 
+          bgImgUrl="Iso-Grifo-Series-I-Receiving-new-nose-1.jpg" 
+          serviceUrl="/services/coachwork" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/DeTomaso-Mangusta-Rebody.jpg", "/Fabrication-of-aluminum-hood-skin-over-frame.jpg", "/Ferrari-Cal-Spyder.jpg", "/Iso-Grifo-after-stripping-and-ready-for-metal-shop.jpg"]} 
+          galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} 
+        />
+        
+        <ServiceSection 
+          title="Interior & Upholstery" 
+          tintColor="#1e3a8a" 
+          description="Hand-stitched leathers, period-accurate fabrics, and bespoke cabin restorations tailored to perfection." 
+          bgImgUrl="/400-GT-interior-scaled-1.jpg" 
+          serviceUrl="/services/interior" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/Iso-Interiors.jpg", "/A3C Interior.jpg", "/Bizzarini.jpg", "/32-Hot-Rod-Custom-Interior.jpg"]} 
+          galleryRow2={["/Ferrari-Upholstery-scaled-1.jpg", "/Islero-S-upholstery-scaled-1.jpg", "/Lamborghini-Countach.jpg", "/Jensen-CV8.jpg"]} 
+        />
+        
+        <ServiceSection 
+          title="Mechanical & Electrical" 
+          tintColor="#14532d" 
+          description="Precision engine rebuilds and modern wiring solutions hidden gracefully beneath vintage aesthetics." 
+          bgImgUrl="/Lamborghini-V12-Sidedraft-Weber-Carburetors.jpg" 
+          serviceUrl="/services/mechanical" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/Weber-II-2-scaled-1.jpg", "/Electrical-components-restored-to-the-highest-level-of-detail.jpg", "/Lamborghini-Countach-AC-Condenser.jpg", "/Lamborghini-V12-engine-on-test-stand.jpg"]} 
+          galleryRow2={["/Bosch-Alt-I-scaled-1.jpg", "/Engine-Work.jpg", "/Ford-Engine.jpg", "/1964-A3C.jpg", "/QV5000-Downdraft-Countach.jpg"]} 
+        />
+        
+        <ServiceSection 
+          title="Custom Welding & Fabrication" 
+          tintColor="#52525b" 
+          description="Bespoke metalwork and expert TIG/MIG welding for chassis repair, strengthening, and custom modifications." 
+          bgImgUrl="/weld-promo-photo2.jpg" 
+          serviceUrl="/services/fabrication" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/Custom-Welding-I.jpg", "/Custom-stainless-header-fabrication.compressed-scaled.jpg", "/Custom-Tooling.jpg", "/Welding-Tool.jpg"]} 
+          galleryRow2={["/Custom-Welding-I.jpg", "/Custom-stainless-header-fabrication.compressed-scaled.jpg", "/Custom-Tooling.jpg", "/Welding-Tool.jpg"]} 
+        />
+        
+        <ServiceSection 
+          title="Service & Maintenance" 
+          tintColor="#94a3b8" 
+          description="Routine care, tuning, and expert diagnostics to keep your post-war exotics running flawlessly." 
+          bgImgUrl="/Automobile-Service-and-Maintenance-in-Pewaukee.jpg" 
+          serviceUrl="/services/maintenance" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} 
+          galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} 
+        />
+        
+        <ServiceSection 
+          title="Detailing Service" 
+          tintColor="#800000" 
+          description="Museum-grade paint correction, preservation, and deep cleaning to elevate your vehicle's presentation." 
+          bgImgUrl="/Automotive-Detailing-in-Pewaukee.jpg" 
+          serviceUrl="/services/detailing" 
+          bookingUrl="#contact-section"
+          galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} 
+          galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} 
+        />
+
+      </div>
+    </div>
+    
+    <ContactSection />
+      </div>
     </div>
   </main>
 </Layout>
@@ -189,114 +268,49 @@ import brand from '../data/brand.json';
     }
   });
 
-  // THE FIX: Changed .set() to .to() so GSAP knows how to reverse the opacity back to 0!
-  
-  // PHASE 1: Hero Collapse
   introTl.to("#hero-ui", { opacity: 0, duration: 0.1 }, 0);
-  introTl.to("#logo-svg", { opacity: 1, duration: 0.1 }, 0); // Reverses perfectly on scroll up
-  
+  introTl.to("#logo-svg", { opacity: 1, duration: 0.1 }, 0); 
   introTl.to("#hero-frost", { backdropFilter: "blur(24px)", backgroundColor: "rgba(255, 255, 255, 0.10)", duration: 0.4 }, 0);
   introTl.to("#logo-svg", { attr: { viewBox: "-960 -540 1920 1080" }, duration: 0.5 }, 0);
-  
   introTl.to("#hero-bg-wrapper", { opacity: 0, duration: 0.2 }, 0.3);
   
   introTl.to("#gradient-sweep", { opacity: 1, duration: 0.05 }, 0.4);
-  introTl.to("#gradient-sweep", { backgroundPosition: "-100% 0%", duration: 0.4, ease: "power2.inOut" }, 0.45);
-  introTl.to("#gradient-sweep", { opacity: 0, duration: 0.1 }, 0.85);
+  introTl.to("#gradient-sweep", { backgroundPosition: "-100% 0%", duration: 1.0, ease: "power2.inOut" }, 0.45);
+  introTl.to("#gradient-sweep", { opacity: 0, duration: 0.2 }, 1.45);
   
-  introTl.to(["#logo-svg", "#hero-frost"], { opacity: 0, duration: 0.2, ease: "power2.inOut" }, 0.9);
+  introTl.to(["#logo-svg", "#hero-frost"], { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 1.5);
 
-  // PHASE 2: Awards Melt In & Hold
-  introTl.to("#awards-layer", { autoAlpha: 1, duration: 0.1 }, 0.8);
-  introTl.fromTo("#awards-section", 
-    { autoAlpha: 0, y: 40 }, 
-    { autoAlpha: 1, y: 0, duration: 0.4, ease: "power3.out" }, 
-    0.9 // Slides in exactly as the Hero blackout finishes
-  );
+  introTl.to("#awards-layer", { autoAlpha: 1, duration: 0.1 }, 1.4);
+  introTl.fromTo("#awards-section", { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.5);
+  introTl.to("#awards-section", { autoAlpha: 0, scale: 0.95, duration: 0.4, ease: "sine.inOut" }, 2.3); 
+  introTl.to("#awards-layer", { autoAlpha: 0, duration: 0.1 }, 2.7);
 
-  // (The timeline now implicitly 'holds' the awards here from 1.3 to 1.7)
-
-  // Awards Melt Out
-  introTl.to("#awards-section", { 
-    autoAlpha: 0, 
-    scale: 0.95, 
-    duration: 0.4, 
-    ease: "sine.inOut" 
-  }, 1.7); 
-  introTl.to("#awards-layer", { autoAlpha: 0, duration: 0.1 }, 2.1);
-
-  // PHASE 3: Text 1 Aggressive Handoff
-    introTl.to("#text1-layer", { autoAlpha: 1, duration: 0.1 }, 1.7); 
-    introTl.fromTo("#text-1", 
-      { autoAlpha: 0, scale: 0.95 }, 
-      { autoAlpha: 1, scale: 1, duration: 0.2 }, 
-      1.7 
-    );
-    
-    // THE FIX: Super fast individual word duration (0.2) so they pop instantly,
-    // smoothly spread over a 1.2s stagger sweep.
-    introTl.to("#text-1 .reveal-word", { 
-      opacity: 1, 
-      duration: 0.2, 
-      stagger: { amount: 1.2 }, 
-      ease: "power2.out" 
-    }, 1.8);
-
-    introTl.to("#text-1", {
-      backgroundPosition: "-200% 0%",
-      duration: 1.4, 
-      ease: "none"
-    }, 1.8);
-    
-    // Text 1 Fades out pushed to 4.0
-    introTl.to("#text-1", { autoAlpha: 0, scale: 0.95, duration: 0.3, ease: "power2.inOut" }, 4.0);
-    introTl.to("#text1-layer", { autoAlpha: 0, duration: 0.1 }, 4.3);
-
-  // PHASE 4: Iso Grifo Appears
-  introTl.to("#showcase-1", { opacity: 1, duration: 0.4 }, 4.2);
+  introTl.to("#text1-layer", { autoAlpha: 1, duration: 0.1 }, 2.3); 
+  introTl.fromTo("#text-1", { autoAlpha: 0, scale: 0.95 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 2.3);
+  introTl.to("#text-1 .reveal-word", { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" }, 2.4);
+  introTl.to("#text-1", { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" }, 2.4);
+  introTl.to("#text-1", { autoAlpha: 0, scale: 0.95, duration: 0.3, ease: "power2.inOut" }, 4.6);
+  introTl.to("#text1-layer", { autoAlpha: 0, duration: 0.1 }, 4.9);
 
   // ==========================================
   // TEXT 2 & SHOWCASE 2 TIMELINE
   // ==========================================
-  const text2Tl = gsap.timeline({
-    scrollTrigger: { 
-      trigger: "#text2-container", 
-      start: "100vh top", // THE FIX: Waits for the exact moment the showcase finishes sliding away
-      end: "bottom bottom", 
-      scrub: 1 
-    }
-  });
-  
-  // Because we delayed the start, we can fire everything instantly at position 0! No dead space.
+  const text2Tl = gsap.timeline({ scrollTrigger: { trigger: "#text2-container", start: "100vh top", end: "bottom bottom", scrub: 1 } });
   text2Tl.to("#text2-layer", { autoAlpha: 1, duration: 0.1 }, 0);
   text2Tl.fromTo("#text-2", { autoAlpha: 0, scale: 0.95 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 0);
-  
   text2Tl.to("#text-2 .reveal-word", { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" }, 0);
   text2Tl.to("#text-2", { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" }, 0);
-  
   text2Tl.to("#text-2", { autoAlpha: 0, scale: 0.95, duration: 0.3 }, 1.8);
   text2Tl.to("#text2-layer", { autoAlpha: 0, duration: 0.1 }, 2.0);
-  text2Tl.to("#showcase-2", { opacity: 1, duration: 0.4 }, 2.0);
-
 
   // ==========================================
   // TEXT 3 TIMELINE
   // ==========================================
-  const text3Tl = gsap.timeline({
-    scrollTrigger: { 
-      trigger: "#text3-container", 
-      start: "100vh top", // THE FIX
-      end: "bottom bottom", 
-      scrub: 1 
-    }
-  });
-  
+  const text3Tl = gsap.timeline({ scrollTrigger: { trigger: "#text3-container", start: "100vh top", end: "bottom bottom", scrub: 1 } });
   text3Tl.to("#text3-layer", { autoAlpha: 1, duration: 0.1 }, 0);
   text3Tl.fromTo("#text-3", { autoAlpha: 0, scale: 0.95 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 0);
-  
   text3Tl.to("#text-3 .reveal-word", { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" }, 0);
   text3Tl.to("#text-3", { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" }, 0);
-  
   text3Tl.to("#text-3", { autoAlpha: 0, scale: 0.95, duration: 0.3 }, 1.8);
   text3Tl.to("#text3-layer", { autoAlpha: 0, duration: 0.1 }, 2.0);
 
@@ -304,37 +318,14 @@ import brand from '../data/brand.json';
   // SHOWCASE BACKGROUND PARALLAX
   // ==========================================
   gsap.utils.toArray('.showcase-bg').forEach((bg) => {
-    gsap.to(bg, {
-      yPercent: 15, // Pushes the image down by 15% of its height as you scroll
-      ease: "none",
-      scrollTrigger: {
-        trigger: bg.closest('section'), 
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      }
-    });
+    gsap.to(bg, { yPercent: 15, ease: "none", scrollTrigger: { trigger: bg.closest('section'), start: "top bottom", end: "bottom top", scrub: true } });
   }); 
 
   // ==========================================
   // SHOWCASE TEXT GRADIENT SWEEP
   // ==========================================
   gsap.utils.toArray('.reveal-text').forEach((text) => {
-    // THE FIX: We animate the Y-axis (the second number).
-    // Starts at 100% (pushed up into the dark zone) and slides down to 0% (the bright zone).
-    gsap.fromTo(text, 
-      { backgroundPosition: "0% 100%" }, 
-      {
-        backgroundPosition: "0% 0%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: text,
-          start: "top 85%",  
-          end: "bottom 45%", 
-          scrub: true
-        }
-      }
-    );
+    gsap.fromTo(text, { backgroundPosition: "0% 100%" }, { backgroundPosition: "0% 0%", ease: "none", scrollTrigger: { trigger: text, start: "top 85%", end: "bottom 45%", scrub: true } });
   });
 
   // ==========================================
@@ -345,17 +336,76 @@ import brand from '../data/brand.json';
     gsap.fromTo(container, { y: travelDistance }, { y: -travelDistance, ease: "none", scrollTrigger: { trigger: container, start: "top bottom", end: "bottom top", scrub: 1.2 } });
   });
 
+  // ==========================================
+  // PERFECT SHOWCASE CROSSFADES (THE MISSING PIECE)
+  // ==========================================
+  gsap.utils.toArray('[id^="showcase-"]').forEach((showcase) => {
+    gsap.to(showcase, {
+      opacity: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: showcase,
+        start: "top top", 
+        end: "+=100vh",   
+        scrub: true
+      }
+    });
+  });
 
   // ==========================================
-  // SERVICES STACKING
+  // HORIZONTAL REVIEWS (MOTIONLESS MELT)
   // ==========================================
-  gsap.utils.toArray('.service-section').forEach((section) => {
-    const bg = section.querySelector('.service-bg');
-    const uiLayer = section.querySelector('.service-ui-layer');
-    const bgLayer = section.querySelector('.service-bg-layer');
-    
-    gsap.fromTo(bg, { y: "-10%" }, { y: "10%", ease: "none", scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: true }});
-    gsap.fromTo([uiLayer, bgLayer], { opacity: 0 }, { opacity: 1, ease: "none", scrollTrigger: { trigger: section, start: "top bottom", end: "top 20%", scrub: true }});
-    gsap.fromTo([uiLayer, bgLayer], { opacity: 1, y: 0, scale: 1 }, { opacity: 0, y: -100, scale: 0.95, ease: "power2.inOut", scrollTrigger: { trigger: section, start: "top top", end: "+=60%", scrub: true }});
+  const reviewsContainer = document.getElementById("reviews-container");
+  const reviewsFadeLayer = document.getElementById("reviews-fade-layer");
+  const reviewsTrack = document.getElementById("reviews-track");
+
+  if (reviewsContainer && reviewsTrack && reviewsFadeLayer) {
+    const reviewsTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: reviewsContainer,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1, 
+        invalidateOnRefresh: true 
+      }
+    });
+
+    reviewsTl.to(reviewsFadeLayer, { autoAlpha: 1, duration: 1.0 });
+    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to(reviewsTrack, { x: () => "-100vw", duration: 2.0, ease: "none" });
+    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to(reviewsTrack, { x: () => "-200vw", duration: 2.0, ease: "none" });
+    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to(reviewsFadeLayer, { autoAlpha: 0, duration: 1.0 });
+  }
+
+  // ==========================================
+  // PERFECT MASTER-PIN CROSSFADES (SERVICES)
+  // ==========================================
+  const serviceSlides = gsap.utils.toArray('.service-slide');
+  
+  const servicesTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#services-master-container",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1
+    }
   });
+
+  servicesTl.to({}, { duration: 1.5 });
+  servicesTl.to(serviceSlides[0], { autoAlpha: 1, duration: 0.5 });
+  
+  for (let i = 1; i < serviceSlides.length; i++) {
+    servicesTl.to({}, { duration: 0.8 });
+    servicesTl.to(serviceSlides[i-1], { autoAlpha: 0, scale: 0.95, duration: 1, ease: "sine.inOut" }, `fade${i}`);
+    
+    servicesTl.fromTo(serviceSlides[i], 
+      { scale: 1.02 }, 
+      { autoAlpha: 1, scale: 1, pointerEvents: "auto", duration: 2.5, ease: "sine.inOut" }, 
+      `fade${i}`
+    );
+  }
+
+  servicesTl.to({}, { duration: 1.0 });
 </script>
