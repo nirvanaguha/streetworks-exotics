@@ -9,7 +9,7 @@ const heroBgUrl = "https://images.unsplash.com/photo-1583121274602-3e2820c69888?
   <img 
     src={heroBgUrl} 
     alt="Cinematic Background" 
-    class="w-full h-full object-cover opacity-100"
+    class="w-full h-full object-cover object-center opacity-100"
   />
   <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
 </div>
@@ -21,9 +21,9 @@ const heroBgUrl = "https://images.unsplash.com/photo-1583121274602-3e2820c69888?
 <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
   <svg 
     id="logo-svg" 
-    class="w-full h-full opacity-0" 
+    class="w-full h-full opacity-0 overflow-visible" 
     viewBox="-160 -250 320 180" 
-    preserveAspectRatio="xMidYMid slice"
+    preserveAspectRatio="xMidYMid meet"
   >
     <defs>
       <mask id="text-mask">
