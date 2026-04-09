@@ -383,13 +383,15 @@ import brand from '../data/brand.json';
       }
     });
 
-    reviewsTl.to(reviewsFadeLayer, { autoAlpha: 1, duration: 1.0 });
-    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to(reviewsFadeLayer, { autoAlpha: 1, duration: 0.5 });
+    reviewsTl.to({}, { duration: 1.0 }); 
     reviewsTl.to(reviewsTrack, { x: () => "-100vw", duration: 2.0, ease: "none" });
-    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to({}, { duration: 1.0 }); 
     reviewsTl.to(reviewsTrack, { x: () => "-200vw", duration: 2.0, ease: "none" });
-    reviewsTl.to({}, { duration: 1.0 });
-    reviewsTl.to(reviewsFadeLayer, { autoAlpha: 0, duration: 1.0 });
+    
+    // THE FIX: Extended the hold on the final review to 2.0 so it stays readable
+    reviewsTl.to({}, { duration: 2.0 }); 
+    reviewsTl.to(reviewsFadeLayer, { autoAlpha: 0, duration: 0.5 });
   }
 
   // ==========================================
@@ -406,8 +408,9 @@ import brand from '../data/brand.json';
     }
   });
 
-  servicesTl.to({}, { duration: 1.5 });
-  servicesTl.to(serviceSlides[0], { autoAlpha: 1, duration: 0.5 });
+  // THE FIX: Eliminated the empty `1.5` duration wait! 
+  // It now immediately begins a smooth crossfade over the fading reviews.
+  servicesTl.to(serviceSlides[0], { autoAlpha: 1, duration: 1.0 });
   
   for (let i = 1; i < serviceSlides.length; i++) {
     servicesTl.to({}, { duration: 0.8 });
@@ -421,6 +424,7 @@ import brand from '../data/brand.json';
   }
 
   servicesTl.to({}, { duration: 1.0 });
+  
   // ==========================================
   // NAVBAR AUTO-HIDE FOR SERVICES
   // ==========================================
