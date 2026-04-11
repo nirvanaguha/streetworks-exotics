@@ -1,156 +1,357 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import NavBar from '../components/NavBar.astro';
-import SmoothScroll from '../components/SmoothScroll.astro';
-import VideoModal from '../components/VideoModal.astro';
-import HeroSequence from '../components/HeroSequence.astro';
-import AwardsGrid from '../components/AwardsGrid.astro';
-import TextReveal from '../components/TextReveal.astro';
-import RestorationShowcase from '../components/RestorationShowcase.astro';
-import ReviewsSection from '../components/ReviewsSection.astro';
-import ServiceSection from '../components/ServiceSection.astro';
-import ContactSection from '../components/ContactSection.astro';
-import Footer from '../components/Footer.astro';
-import brand from '../data/brand.json';
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
+import VideoModal from "../components/VideoModal.astro";
+import HeroSequence from "../components/HeroSequence.astro";
+import AwardsGrid from "../components/AwardsGrid.astro";
+import TextReveal from "../components/TextReveal.astro";
+import RestorationShowcase from "../components/RestorationShowcase.astro";
+import ReviewsSection from "../components/ReviewsSection.astro";
+import ServiceSection from "../components/ServiceSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import Footer from "../components/Footer.astro";
+import brand from "../data/brand.json";
 ---
 
 <Layout title={brand.client}>
   <SmoothScroll />
   <VideoModal />
-  <NavBar /> 
+  <NavBar />
 
   <main class="relative w-full bg-black text-white">
-    
     <div id="intro-scroll-container" class="relative w-full h-[600vh] bg-black">
-      
-      <div class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center">
-        
+      <div
+        class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center"
+      >
         <div id="hero-layer" class="absolute inset-0 z-10">
           <HeroSequence />
         </div>
-        
-        <div id="awards-layer" class="absolute inset-0 z-20 opacity-0 invisible flex items-center justify-center pointer-events-none">
+
+        <div
+          id="awards-layer"
+          class="absolute inset-0 z-20 opacity-0 invisible flex items-center justify-center pointer-events-none"
+        >
           <AwardsGrid />
         </div>
-        
-        <div id="text1-layer" class="absolute inset-0 z-30 opacity-0 invisible flex felx-col justify-center items-start max-w-5xl mx-auto px-6 md:px-12 pt-32 text-left pointer-events-none">
-          <TextReveal 
-            id="text-1" 
-            gradientFrom="#ff2a00" 
-            gradientTo="#800000" 
+
+        <div
+          id="text1-layer"
+          class="absolute inset-0 z-30 opacity-0 invisible flex felx-col justify-center items-start max-w-5xl mx-auto px-6 md:px-12 pt-32 text-left pointer-events-none"
+        >
+          <TextReveal
+            id="text-1"
+            gradientFrom="#ff2a00"
+            gradientTo="#800000"
             text="StreetWorks was founded in 1999 by Matt Backhaus. We initially shared shop space with a British car service specialist in Waukesha and expanded to our current location in Pewaukee, Wisconsin, in 2022. Our early work included restoring Jaguars and Triumphs."
           />
         </div>
-        
       </div>
     </div>
 
-    <div id="showcase-1" class="relative w-full z-20 -mt-[100dvh] opacity-0 bg-black">
-      <RestorationShowcase 
-        year="1967" 
-        title="Iso Grifo 350GT" 
-        mainImgUrl="/Restored-1967-Iso-Grifo-4.jpg" 
+    <div
+      id="showcase-1"
+      class="relative w-full z-20 -mt-[100dvh] opacity-0 bg-black"
+    >
+      <RestorationShowcase
+        year="1967"
+        title="Iso Grifo 350GT"
+        mainImgUrl="/Restored-1967-Iso-Grifo-4.jpg"
         textId="iso-text"
-        gradientFrom="#fef08a" 
+        gradientFrom="#fef08a"
         gradientTo="#b45309"
         linkUrl="https://streetworksexotics.com/1967-iso-grifo-restoration/"
         ctaColor="#fef08a"
       >
-        <span slot="intro">In 2004, we showcased our first restoration of an Iso Grifo 350GT at Pebble Beach.</span>
+        <span slot="intro"
+          >In 2004, we showcased our first restoration of an Iso Grifo 350GT at
+          Pebble Beach.</span
+        >
 
         <div slot="gallery-left" class="contents">
-          <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-11/12 ml-auto aspect-[4/5] mt-12 md:mt-32">
-            <img src="/Restored-1967-Iso-Grifo-Engine.jpg" alt="Engine Restoration" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
-            <div class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          <div
+            class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-11/12 ml-auto aspect-[4/5] mt-12 md:mt-32"
+          >
+            <img
+              src="/Restored-1967-Iso-Grifo-Engine.jpg"
+              alt="Engine Restoration"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]"
+            />
+            <div
+              class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+            </div>
+            <button
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="15 3 21 3 21 9"></polyline><polyline
+                  points="9 21 3 21 3 15"></polyline><line
+                  x1="21"
+                  y1="3"
+                  x2="14"
+                  y2="10"></line><line x1="3" y1="21" x2="10" y2="14"
+                ></line></svg
+              >
             </button>
           </div>
         </div>
 
         <div slot="gallery-right" class="contents">
-          <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-full aspect-square">
-            <img src="/Restored-1967-Iso-Grifo-Body.jpg" alt="Body Work" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
-            <div class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          <div
+            class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-full aspect-square"
+          >
+            <img
+              src="/Restored-1967-Iso-Grifo-Body.jpg"
+              alt="Body Work"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]"
+            />
+            <div
+              class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+            </div>
+            <button
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="15 3 21 3 21 9"></polyline><polyline
+                  points="9 21 3 21 3 15"></polyline><line
+                  x1="21"
+                  y1="3"
+                  x2="14"
+                  y2="10"></line><line x1="3" y1="21" x2="10" y2="14"
+                ></line></svg
+              >
             </button>
           </div>
-          
-          <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-10/12 mr-auto aspect-[3/4]">
-            <img src="/Restored-1967-Iso-Grifo-4.jpg" alt="Full Restoration" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
-            <div class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+
+          <div
+            class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-10/12 mr-auto aspect-[3/4]"
+          >
+            <img
+              src="/Restored-1967-Iso-Grifo-4.jpg"
+              alt="Full Restoration"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]"
+            />
+            <div
+              class="absolute inset-0 border-[3px] border-yellow-500/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+            </div>
+            <button
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-yellow-500 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="15 3 21 3 21 9"></polyline><polyline
+                  points="9 21 3 21 3 15"></polyline><line
+                  x1="21"
+                  y1="3"
+                  x2="14"
+                  y2="10"></line><line x1="3" y1="21" x2="10" y2="14"
+                ></line></svg
+              >
             </button>
           </div>
         </div>
       </RestorationShowcase>
     </div>
 
-    <div id="text2-container" class="relative w-full h-[350dvh] bg-black -mt-[100dvh] z-10">
-      <div class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center">
-        <div id="text2-layer" class="absolute inset-0 z-30 opacity-0 invisible flex flex-col justify-center items-start max-w-5xl mx-auto px-6 md:px-12 text-left pointer-events-none">
-          <TextReveal 
-            id="text-2" 
-            gradientFrom="#fef08a" 
-            gradientTo="#b45309" 
+    <div
+      id="text2-container"
+      class="relative w-full h-[350dvh] bg-black -mt-[100dvh] z-10"
+    >
+      <div
+        class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center"
+      >
+        <div
+          id="text2-layer"
+          class="absolute inset-0 z-30 opacity-0 invisible flex flex-col justify-center items-start max-w-5xl mx-auto px-6 md:px-12 text-left pointer-events-none"
+        >
+          <TextReveal
+            id="text-2"
+            gradientFrom="#fef08a"
+            gradientTo="#b45309"
             text="Today, we restore and service some of the world's most interesting and valuable cars, including a Lamborghini from the former Shah of Iran."
           />
         </div>
       </div>
     </div>
 
-    <div id="showcase-2" class="relative w-full z-20 -mt-[100dvh] opacity-0 bg-black">
-      <RestorationShowcase 
-        year="1966" 
-        title="Jensen CV8 MkIII" 
-        mainImgUrl="/Jensen-CV8-MKIII-10.jpg" 
+    <div
+      id="showcase-2"
+      class="relative w-full z-20 -mt-[100dvh] opacity-0 bg-black"
+    >
+      <RestorationShowcase
+        year="1966"
+        title="Jensen CV8 MkIII"
+        mainImgUrl="/Jensen-CV8-MKIII-10.jpg"
         textId="jensen-text"
-        gradientFrom="#ffffff" 
+        gradientFrom="#ffffff"
         gradientTo="#94a3b8"
         linkUrl="https://streetworksexotics.com/the-incredible-restoration-journey-of-the-jensen-cv8-mkiii/"
         ctaColor="#cbd5e1"
       >
-        <span slot="intro">At StreetWorks, we deliver exceptional automobile restorations. We are dedicated to preserving the cars you love, specializing in Post-War vehicles.</span>
+        <span slot="intro"
+          >At StreetWorks, we deliver exceptional automobile restorations. We
+          are dedicated to preserving the cars you love, specializing in
+          Post-War vehicles.</span
+        >
 
         <div slot="gallery-left" class="contents">
-          <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-11/12 ml-auto aspect-[4/5] mt-12 md:mt-32">
-            <img src="/Jensen-CV8-MKIII-Restored.jpg" alt="Jensen Restoration Process" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
-            <div class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          <div
+            class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-11/12 ml-auto aspect-[4/5] mt-12 md:mt-32"
+          >
+            <img
+              src="/Jensen-CV8-MKIII-Restored.jpg"
+              alt="Jensen Restoration Process"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]"
+            />
+            <div
+              class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+            </div>
+            <button
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="15 3 21 3 21 9"></polyline><polyline
+                  points="9 21 3 21 3 15"></polyline><line
+                  x1="21"
+                  y1="3"
+                  x2="14"
+                  y2="10"></line><line x1="3" y1="21" x2="10" y2="14"
+                ></line></svg
+              >
             </button>
           </div>
         </div>
 
         <div slot="gallery-right" class="contents">
-          <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-full aspect-square">
-            <img src="/Jensen-CV8-MKIII-Interior.jpg" alt="Jensen Interior" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
-            <div class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          <div
+            class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-full aspect-square"
+          >
+            <img
+              src="/Jensen-CV8-MKIII-Interior.jpg"
+              alt="Jensen Interior"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]"
+            />
+            <div
+              class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+            </div>
+            <button
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="15 3 21 3 21 9"></polyline><polyline
+                  points="9 21 3 21 3 15"></polyline><line
+                  x1="21"
+                  y1="3"
+                  x2="14"
+                  y2="10"></line><line x1="3" y1="21" x2="10" y2="14"
+                ></line></svg
+              >
             </button>
           </div>
-          
-          <div class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-10/12 mr-auto aspect-[3/4]">
-            <img src="/Jensen-CV8-MKIII-Engine.jpg" alt="Jensen Engine" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]" />
-            <div class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <button class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+
+          <div
+            class="gallery-zoomable group relative bg-[#111] rounded-lg overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in w-10/12 mr-auto aspect-[3/4]"
+          >
+            <img
+              src="/Jensen-CV8-MKIII-Engine.jpg"
+              alt="Jensen Engine"
+              class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[0.97]"
+            />
+            <div
+              class="absolute inset-0 border-[3px] border-slate-300/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+            </div>
+            <button
+              class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md rounded-full text-slate-300 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="15 3 21 3 21 9"></polyline><polyline
+                  points="9 21 3 21 3 15"></polyline><line
+                  x1="21"
+                  y1="3"
+                  x2="14"
+                  y2="10"></line><line x1="3" y1="21" x2="10" y2="14"
+                ></line></svg
+              >
             </button>
           </div>
         </div>
       </RestorationShowcase>
     </div>
 
-    <div id="text3-container" class="relative w-full h-[350dvh] bg-black -mt-[100dvh] z-10">
-      <div class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center">
-        <div id="text3-layer" class="absolute inset-0 z-30 opacity-0 invisible flex flex-col items-start justify-center max-w-5xl mx-auto px-6 md:px-12 text-left pointer-events-none">
-          <TextReveal 
-            id="text-3" 
-            gradientFrom="#ffffff" 
-            gradientTo="#52525b" 
+    <div
+      id="text3-container"
+      class="relative w-full h-[350dvh] bg-black -mt-[100dvh] z-10"
+    >
+      <div
+        class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center"
+      >
+        <div
+          id="text3-layer"
+          class="absolute inset-0 z-30 opacity-0 invisible flex flex-col items-start justify-center max-w-5xl mx-auto px-6 md:px-12 text-left pointer-events-none"
+        >
+          <TextReveal
+            id="text-3"
+            gradientFrom="#ffffff"
+            gradientTo="#52525b"
             text="Our extensive expertise ensures that everything from Sports and GTs to Vintage Racecars, Muscle Cars, and Hot Rods are revived and returned to you in pristine condition."
           />
         </div>
@@ -159,102 +360,181 @@ import brand from '../data/brand.json';
 
     <ReviewsSection />
 
-    <div id="services-master-container" class="relative w-full h-[1200dvh] z-20 -mt-[100dvh]">
+    <div
+      id="services-master-container"
+      class="relative w-full h-[1200dvh] z-20 -mt-[100dvh]"
+    >
       <div class="sticky top-0 w-full h-[100dvh] overflow-hidden">
-        
-        <ServiceSection 
-          title="Body & Paint" 
-          tintColor="#800000" 
-          description="Flawless surface preparation and period-correct color matching for a concours-quality finish." 
-          bgImgUrl="/Blue-400GT-rear-scaled-1.jpg" 
-          serviceUrl="/services/body-paint" 
+        <ServiceSection
+          title="Body & Paint"
+          tintColor="#800000"
+          description="Flawless surface preparation and period-correct color matching for a concours-quality finish."
+          bgImgUrl="/Blue-400GT-rear-scaled-1.jpg"
+          serviceUrl="/services/body-paint"
           bookingUrl="#contact-section"
-          galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} 
-          galleryRow2={["/Aintree-Green-Iso-Grifo-Series-I.jpg", "/1964-A3:C.jpg", "/Jensen-CV8-Finishing-Assembly-1.jpg", "/Porsche-356-Fresh-out-of-the-paint-booth-1.jpg"]} 
-        />
-        
-        <ServiceSection 
-          title="Coachwork" 
-          tintColor="#b45309" 
-          description="Expert metal shaping and panel restoration to revive the original structural integrity and sweeping lines." 
-          bgImgUrl="Iso-Grifo-Series-I-Receiving-new-nose-1.jpg" 
-          serviceUrl="/services/coachwork" 
-          bookingUrl="#contact-section"
-          galleryRow1={["/DeTomaso-Mangusta-Rebody.jpg", "/Fabrication-of-aluminum-hood-skin-over-frame.jpg", "/Ferrari-Cal-Spyder.jpg", "/Iso-Grifo-after-stripping-and-ready-for-metal-shop.jpg"]} 
-          galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} 
-        />
-        
-        <ServiceSection 
-          title="Interior & Upholstery" 
-          tintColor="#1e3a8a" 
-          description="Hand-stitched leathers, period-accurate fabrics, and bespoke cabin restorations tailored to perfection." 
-          bgImgUrl="/400-GT-interior-scaled-1.jpg" 
-          serviceUrl="/services/interior" 
-          bookingUrl="#contact-section"
-          galleryRow1={["/Iso-Interiors.jpg", "/A3C Interior.jpg", "/Bizzarini.jpg", "/32-Hot-Rod-Custom-Interior.jpg"]} 
-          galleryRow2={["/Ferrari-Upholstery-scaled-1.jpg", "/Islero-S-upholstery-scaled-1.jpg", "/Lamborghini-Countach.jpg", "/Jensen-CV8.jpg"]} 
-        />
-        
-        <ServiceSection 
-          title="Mechanical & Electrical" 
-          tintColor="#14532d" 
-          description="Precision engine rebuilds and modern wiring solutions hidden gracefully beneath vintage aesthetics." 
-          bgImgUrl="/Lamborghini-V12-Sidedraft-Weber-Carburetors.jpg" 
-          serviceUrl="/services/mechanical" 
-          bookingUrl="#contact-section"
-          galleryRow1={["/Weber-II-2-scaled-1.jpg", "/Electrical-components-restored-to-the-highest-level-of-detail.jpg", "/Lamborghini-Countach-AC-Condenser.jpg", "/Lamborghini-V12-engine-on-test-stand.jpg"]} 
-          galleryRow2={["/Bosch-Alt-I-scaled-1.jpg", "/Engine-Work.jpg", "/Ford-Engine.jpg", "/1964-A3C.jpg", "/QV5000-Downdraft-Countach.jpg"]} 
-        />
-        
-        <ServiceSection 
-          title="Custom Welding & Fabrication" 
-          tintColor="#52525b" 
-          description="Bespoke metalwork and expert TIG/MIG welding for chassis repair, strengthening, and custom modifications." 
-          bgImgUrl="/weld-promo-photo2.jpg" 
-          serviceUrl="/services/fabrication" 
-          bookingUrl="#contact-section"
-          galleryRow1={["/Custom-Welding-I.jpg", "/Custom-stainless-header-fabrication.compressed-scaled.jpg", "/Custom-Tooling.jpg", "/Welding-Tool.jpg"]} 
-          galleryRow2={["/Custom-Welding-I.jpg", "/Custom-stainless-header-fabrication.compressed-scaled.jpg", "/Custom-Tooling.jpg", "/Welding-Tool.jpg"]} 
-        />
-        
-        <ServiceSection 
-          title="Service & Maintenance" 
-          tintColor="#94a3b8" 
-          description="Routine care, tuning, and expert diagnostics to keep your post-war exotics running flawlessly." 
-          bgImgUrl="/Automobile-Service-and-Maintenance-in-Pewaukee.jpg" 
-          serviceUrl="/services/maintenance" 
-          bookingUrl="#contact-section"
-          galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} 
-          galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} 
-        />
-        
-        <ServiceSection 
-          title="Detailing Service" 
-          tintColor="#800000" 
-          description="Museum-grade paint correction, preservation, and deep cleaning to elevate your vehicle's presentation." 
-          bgImgUrl="/Automotive-Detailing-in-Pewaukee.jpg" 
-          serviceUrl="/services/detailing" 
-          bookingUrl="#contact-section"
-          galleryRow1={["/body-and-paint-scaled.jpg", "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg", "/DeTomaso-Mangusta-Sunburst-Orange.jpg", "/Isetta-Delivery.jpg"]} 
-          galleryRow2={["/Iso-Grifo-Series-I-Receiving-new-nose.jpg", "/Lamborghini-Islero-out-of-metal-shop.jpg", "/A3C Coachwork.jpg", "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"]} 
+          galleryRow1={[
+            "/body-and-paint-scaled.jpg",
+            "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg",
+            "/DeTomaso-Mangusta-Sunburst-Orange.jpg",
+            "/Isetta-Delivery.jpg",
+          ]}
+          galleryRow2={[
+            "/Aintree-Green-Iso-Grifo-Series-I.jpg",
+            "/1964-A3:C.jpg",
+            "/Jensen-CV8-Finishing-Assembly-1.jpg",
+            "/Porsche-356-Fresh-out-of-the-paint-booth-1.jpg",
+          ]}
         />
 
+        <ServiceSection
+          title="Coachwork"
+          tintColor="#b45309"
+          description="Expert metal shaping and panel restoration to revive the original structural integrity and sweeping lines."
+          bgImgUrl="Iso-Grifo-Series-I-Receiving-new-nose-1.jpg"
+          serviceUrl="/services/coachwork"
+          bookingUrl="#contact-section"
+          galleryRow1={[
+            "/DeTomaso-Mangusta-Rebody.jpg",
+            "/Fabrication-of-aluminum-hood-skin-over-frame.jpg",
+            "/Ferrari-Cal-Spyder.jpg",
+            "/Iso-Grifo-after-stripping-and-ready-for-metal-shop.jpg",
+          ]}
+          galleryRow2={[
+            "/Iso-Grifo-Series-I-Receiving-new-nose.jpg",
+            "/Lamborghini-Islero-out-of-metal-shop.jpg",
+            "/A3C Coachwork.jpg",
+            "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg",
+          ]}
+        />
+
+        <ServiceSection
+          title="Interior & Upholstery"
+          tintColor="#1e3a8a"
+          description="Hand-stitched leathers, period-accurate fabrics, and bespoke cabin restorations tailored to perfection."
+          bgImgUrl="/400-GT-interior-scaled-1.jpg"
+          serviceUrl="/services/interior"
+          bookingUrl="#contact-section"
+          galleryRow1={[
+            "/Iso-Interiors.jpg",
+            "/A3C Interior.jpg",
+            "/Bizzarini.jpg",
+            "/32-Hot-Rod-Custom-Interior.jpg",
+          ]}
+          galleryRow2={[
+            "/Ferrari-Upholstery-scaled-1.jpg",
+            "/Islero-S-upholstery-scaled-1.jpg",
+            "/Lamborghini-Countach.jpg",
+            "/Jensen-CV8.jpg",
+          ]}
+        />
+
+        <ServiceSection
+          title="Mechanical & Electrical"
+          tintColor="#14532d"
+          description="Precision engine rebuilds and modern wiring solutions hidden gracefully beneath vintage aesthetics."
+          bgImgUrl="/Lamborghini-V12-Sidedraft-Weber-Carburetors.jpg"
+          serviceUrl="/services/mechanical"
+          bookingUrl="#contact-section"
+          galleryRow1={[
+            "/Weber-II-2-scaled-1.jpg",
+            "/Electrical-components-restored-to-the-highest-level-of-detail.jpg",
+            "/Lamborghini-Countach-AC-Condenser.jpg",
+            "/Lamborghini-V12-engine-on-test-stand.jpg",
+          ]}
+          galleryRow2={[
+            "/Bosch-Alt-I-scaled-1.jpg",
+            "/Engine-Work.jpg",
+            "/Ford-Engine.jpg",
+            "/1964-A3C.jpg",
+            "/QV5000-Downdraft-Countach.jpg",
+          ]}
+        />
+
+        <ServiceSection
+          title="Custom Welding & Fabrication"
+          tintColor="#52525b"
+          description="Bespoke metalwork and expert TIG/MIG welding for chassis repair, strengthening, and custom modifications."
+          bgImgUrl="/weld-promo-photo2.jpg"
+          serviceUrl="/services/fabrication"
+          bookingUrl="#contact-section"
+          galleryRow1={[
+            "/Custom-Welding-I.jpg",
+            "/Custom-stainless-header-fabrication.compressed-scaled.jpg",
+            "/Custom-Tooling.jpg",
+            "/Welding-Tool.jpg",
+          ]}
+          galleryRow2={[
+            "/Custom-Welding-I.jpg",
+            "/Custom-stainless-header-fabrication.compressed-scaled.jpg",
+            "/Custom-Tooling.jpg",
+            "/Welding-Tool.jpg",
+          ]}
+        />
+
+        <ServiceSection
+          title="Service & Maintenance"
+          tintColor="#94a3b8"
+          description="Routine care, tuning, and expert diagnostics to keep your post-war exotics running flawlessly."
+          bgImgUrl="/Automobile-Service-and-Maintenance-in-Pewaukee.jpg"
+          serviceUrl="/services/maintenance"
+          bookingUrl="#contact-section"
+          galleryRow1={[
+            "/body-and-paint-scaled.jpg",
+            "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg",
+            "/DeTomaso-Mangusta-Sunburst-Orange.jpg",
+            "/Isetta-Delivery.jpg",
+          ]}
+          galleryRow2={[
+            "/Iso-Grifo-Series-I-Receiving-new-nose.jpg",
+            "/Lamborghini-Islero-out-of-metal-shop.jpg",
+            "/A3C Coachwork.jpg",
+            "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg",
+          ]}
+        />
+
+        <ServiceSection
+          title="Detailing Service"
+          tintColor="#800000"
+          description="Museum-grade paint correction, preservation, and deep cleaning to elevate your vehicle's presentation."
+          bgImgUrl="/Automotive-Detailing-in-Pewaukee.jpg"
+          serviceUrl="/services/detailing"
+          bookingUrl="#contact-section"
+          galleryRow1={[
+            "/body-and-paint-scaled.jpg",
+            "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg",
+            "/DeTomaso-Mangusta-Sunburst-Orange.jpg",
+            "/Isetta-Delivery.jpg",
+          ]}
+          galleryRow2={[
+            "/Iso-Grifo-Series-I-Receiving-new-nose.jpg",
+            "/Lamborghini-Islero-out-of-metal-shop.jpg",
+            "/A3C Coachwork.jpg",
+            "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg",
+          ]}
+        />
       </div>
     </div>
-    
+
     <ContactSection />
     <Footer />
   </main>
 </Layout>
 
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   gsap.registerPlugin(ScrollTrigger);
 
   // Initial Load
-  gsap.from('.hero-stagger', { y: 30, opacity: 0, duration: 1.5, stagger: 0.15, ease: "power4.out", delay: 0.2 });
+  gsap.from(".hero-stagger", {
+    y: 30,
+    opacity: 0,
+    duration: 1.5,
+    stagger: 0.15,
+    ease: "power4.out",
+    delay: 0.2,
+  });
 
   // ==========================================
   // MASTER INTRO TIMELINE (Hero -> Awards -> Text 1)
@@ -263,69 +543,177 @@ import brand from '../data/brand.json';
     scrollTrigger: {
       trigger: "#intro-scroll-container",
       start: "top top",
-      end: "bottom bottom", 
-      scrub: 1,      
-    }
+      end: "bottom bottom",
+      scrub: 1,
+    },
   });
 
   introTl.to("#hero-ui", { opacity: 0, duration: 0.1 }, 0);
-  introTl.to("#logo-svg", { opacity: 1, duration: 0.1 }, 0); 
-  introTl.to("#hero-frost", { backdropFilter: "blur(24px)", backgroundColor: "rgba(255, 255, 255, 0.10)", duration: 0.4 }, 0);
-  introTl.to("#logo-svg", { attr: { viewBox: "-960 -540 1920 1080" }, duration: 0.5 }, 0);
+  introTl.to("#logo-svg", { opacity: 1, duration: 0.1 }, 0);
+  introTl.to(
+    "#hero-frost",
+    {
+      backdropFilter: "blur(24px)",
+      backgroundColor: "rgba(255, 255, 255, 0.10)",
+      duration: 0.4,
+    },
+    0,
+  );
+  introTl.to(
+    "#logo-svg",
+    { attr: { viewBox: "-960 -540 1920 1080" }, duration: 0.5 },
+    0,
+  );
   introTl.to("#hero-bg-wrapper", { opacity: 0, duration: 0.2 }, 0.3);
-  
+
   introTl.to("#gradient-sweep", { opacity: 1, duration: 0.05 }, 0.4);
-  introTl.to("#gradient-sweep", { backgroundPosition: "-100% 0%", duration: 1.0, ease: "power2.inOut" }, 0.45);
+  introTl.to(
+    "#gradient-sweep",
+    { backgroundPosition: "-100% 0%", duration: 1.0, ease: "power2.inOut" },
+    0.45,
+  );
   introTl.to("#gradient-sweep", { opacity: 0, duration: 0.2 }, 1.45);
-  
-  introTl.to(["#logo-svg", "#hero-frost"], { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 1.5);
+
+  introTl.to(
+    ["#logo-svg", "#hero-frost"],
+    { opacity: 0, duration: 0.4, ease: "power2.inOut" },
+    1.5,
+  );
 
   introTl.to("#awards-layer", { autoAlpha: 1, duration: 0.1 }, 1.4);
-  introTl.fromTo("#awards-section", { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.5);
-  introTl.to("#awards-section", { autoAlpha: 0, scale: 0.95, duration: 0.4, ease: "sine.inOut" }, 2.3); 
+  introTl.fromTo(
+    "#awards-section",
+    { autoAlpha: 0, y: 40 },
+    { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" },
+    1.5,
+  );
+  introTl.to(
+    "#awards-section",
+    { autoAlpha: 0, scale: 0.95, duration: 0.4, ease: "sine.inOut" },
+    2.3,
+  );
   introTl.to("#awards-layer", { autoAlpha: 0, duration: 0.1 }, 2.7);
 
-  introTl.to("#text1-layer", { autoAlpha: 1, duration: 0.1 }, 2.3); 
-  introTl.fromTo("#text-1", { autoAlpha: 0, scale: 0.95 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 2.3);
-  introTl.to("#text-1 .reveal-word", { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" }, 2.4);
-  introTl.to("#text-1", { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" }, 2.4);
-  introTl.to("#text-1", { autoAlpha: 0, scale: 0.95, duration: 0.3, ease: "power2.inOut" }, 4.6);
+  introTl.to("#text1-layer", { autoAlpha: 1, duration: 0.1 }, 2.3);
+  introTl.fromTo(
+    "#text-1",
+    { autoAlpha: 0, scale: 0.95 },
+    { autoAlpha: 1, scale: 1, duration: 0.2 },
+    2.3,
+  );
+  introTl.to(
+    "#text-1 .reveal-word",
+    { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" },
+    2.4,
+  );
+  introTl.to(
+    "#text-1",
+    { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" },
+    2.4,
+  );
+  introTl.to(
+    "#text-1",
+    { autoAlpha: 0, scale: 0.95, duration: 0.3, ease: "power2.inOut" },
+    4.6,
+  );
   introTl.to("#text1-layer", { autoAlpha: 0, duration: 0.1 }, 4.9);
 
   // ==========================================
   // TEXT 2 & SHOWCASE 2 TIMELINE
   // ==========================================
-  const text2Tl = gsap.timeline({ scrollTrigger: { trigger: "#text2-container", start: "100vh top", end: "bottom bottom", scrub: 1 } });
+  const text2Tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#text2-container",
+      start: "100vh top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
   text2Tl.to("#text2-layer", { autoAlpha: 1, duration: 0.1 }, 0);
-  text2Tl.fromTo("#text-2", { autoAlpha: 0, scale: 0.95 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 0);
-  text2Tl.to("#text-2 .reveal-word", { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" }, 0);
-  text2Tl.to("#text-2", { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" }, 0);
+  text2Tl.fromTo(
+    "#text-2",
+    { autoAlpha: 0, scale: 0.95 },
+    { autoAlpha: 1, scale: 1, duration: 0.2 },
+    0,
+  );
+  text2Tl.to(
+    "#text-2 .reveal-word",
+    { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" },
+    0,
+  );
+  text2Tl.to(
+    "#text-2",
+    { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" },
+    0,
+  );
   text2Tl.to("#text-2", { autoAlpha: 0, scale: 0.95, duration: 0.3 }, 1.8);
   text2Tl.to("#text2-layer", { autoAlpha: 0, duration: 0.1 }, 2.0);
 
   // ==========================================
   // TEXT 3 TIMELINE
   // ==========================================
-  const text3Tl = gsap.timeline({ scrollTrigger: { trigger: "#text3-container", start: "100vh top", end: "bottom bottom", scrub: 1 } });
+  const text3Tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#text3-container",
+      start: "100vh top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
   text3Tl.to("#text3-layer", { autoAlpha: 1, duration: 0.1 }, 0);
-  text3Tl.fromTo("#text-3", { autoAlpha: 0, scale: 0.95 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 0);
-  text3Tl.to("#text-3 .reveal-word", { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" }, 0);
-  text3Tl.to("#text-3", { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" }, 0);
+  text3Tl.fromTo(
+    "#text-3",
+    { autoAlpha: 0, scale: 0.95 },
+    { autoAlpha: 1, scale: 1, duration: 0.2 },
+    0,
+  );
+  text3Tl.to(
+    "#text-3 .reveal-word",
+    { opacity: 1, duration: 0.2, stagger: { amount: 1.2 }, ease: "power2.out" },
+    0,
+  );
+  text3Tl.to(
+    "#text-3",
+    { backgroundPosition: "-200% 0%", duration: 1.4, ease: "none" },
+    0,
+  );
   text3Tl.to("#text-3", { autoAlpha: 0, scale: 0.95, duration: 0.3 }, 1.8);
   text3Tl.to("#text3-layer", { autoAlpha: 0, duration: 0.1 }, 2.0);
 
   // ==========================================
   // SHOWCASE BACKGROUND PARALLAX
   // ==========================================
-  gsap.utils.toArray('.showcase-bg').forEach((bg) => {
-    gsap.to(bg, { yPercent: 15, ease: "none", scrollTrigger: { trigger: bg.closest('section'), start: "top bottom", end: "bottom top", scrub: true } });
-  }); 
+  gsap.utils.toArray(".showcase-bg").forEach((bg: any) => {
+    gsap.to(bg, {
+      yPercent: 15,
+      ease: "none",
+      scrollTrigger: {
+        trigger: bg.closest("section"),
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  });
 
   // ==========================================
   // SHOWCASE TEXT GRADIENT SWEEP
   // ==========================================
-  gsap.utils.toArray('.reveal-text').forEach((text) => {
-    gsap.fromTo(text, { backgroundPosition: "0% 100%" }, { backgroundPosition: "0% 0%", ease: "none", scrollTrigger: { trigger: text, start: "top 85%", end: "bottom 45%", scrub: true } });
+  gsap.utils.toArray(".reveal-text").forEach((text: any) => {
+    gsap.fromTo(
+      text,
+      { backgroundPosition: "0% 100%" },
+      {
+        backgroundPosition: "0% 0%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: text,
+          start: "top 85%",
+          end: "bottom 45%",
+          scrub: true,
+        },
+      },
+    );
   });
 
   // ==========================================
@@ -335,33 +723,59 @@ import brand from '../data/brand.json';
 
   mm.add("(min-width: 768px)", () => {
     // DESKTOP: Full parallax travel distance
-    gsap.utils.toArray('.gallery-zoomable').forEach((container, index) => {
-      const travelDistance = index % 2 === 0 ? 180 : 80; 
-      gsap.fromTo(container, { y: travelDistance }, { y: -travelDistance, ease: "none", scrollTrigger: { trigger: container, start: "top bottom", end: "bottom top", scrub: 1.2 } });
+    gsap.utils.toArray(".gallery-zoomable").forEach((container: any, index) => {
+      const travelDistance = index % 2 === 0 ? 180 : 80;
+      gsap.fromTo(
+        container,
+        { y: travelDistance },
+        {
+          y: -travelDistance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        },
+      );
     });
   });
 
   mm.add("(max-width: 767px)", () => {
     // MOBILE: Greatly reduced parallax travel so images stay in the viewport
-    gsap.utils.toArray('.gallery-zoomable').forEach((container, index) => {
-      const travelDistance = index % 2 === 0 ? 40 : 20; 
-      gsap.fromTo(container, { y: travelDistance }, { y: -travelDistance, ease: "none", scrollTrigger: { trigger: container, start: "top bottom", end: "bottom top", scrub: 1.2 } });
+    gsap.utils.toArray(".gallery-zoomable").forEach((container: any, index) => {
+      const travelDistance = index % 2 === 0 ? 40 : 20;
+      gsap.fromTo(
+        container,
+        { y: travelDistance },
+        {
+          y: -travelDistance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        },
+      );
     });
   });
 
   // ==========================================
   // PERFECT SHOWCASE CROSSFADES (THE MISSING PIECE)
   // ==========================================
-  gsap.utils.toArray('[id^="showcase-"]').forEach((showcase) => {
+  gsap.utils.toArray('[id^="showcase-"]').forEach((showcase: any) => {
     gsap.to(showcase, {
       opacity: 1,
       ease: "none",
       scrollTrigger: {
         trigger: showcase,
-        start: "top top", 
-        end: "+=100vh",   
-        scrub: true
-      }
+        start: "top top",
+        end: "+=100vh",
+        scrub: true,
+      },
     });
   });
 
@@ -378,71 +792,114 @@ import brand from '../data/brand.json';
         trigger: reviewsContainer,
         start: "top top",
         end: "bottom bottom",
-        scrub: 1, 
-        invalidateOnRefresh: true 
-      }
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
     });
 
     reviewsTl.to(reviewsFadeLayer, { autoAlpha: 1, duration: 0.5 });
-    reviewsTl.to({}, { duration: 1.0 }); 
-    reviewsTl.to(reviewsTrack, { x: () => "-100vw", duration: 2.0, ease: "none" });
-    reviewsTl.to({}, { duration: 1.0 }); 
-    reviewsTl.to(reviewsTrack, { x: () => "-200vw", duration: 2.0, ease: "none" });
-    
+    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to(reviewsTrack, {
+      x: () => "-100vw",
+      duration: 2.0,
+      ease: "none",
+    });
+    reviewsTl.to({}, { duration: 1.0 });
+    reviewsTl.to(reviewsTrack, {
+      x: () => "-200vw",
+      duration: 2.0,
+      ease: "none",
+    });
+
     // THE FIX: Extended the hold on the final review to 2.0 so it stays readable
-    reviewsTl.to({}, { duration: 2.0 }); 
+    reviewsTl.to({}, { duration: 2.0 });
     reviewsTl.to(reviewsFadeLayer, { autoAlpha: 0, duration: 0.5 });
   }
 
   // ==========================================
   // PERFECT MASTER-PIN CROSSFADES (SERVICES)
   // ==========================================
-  const serviceSlides = gsap.utils.toArray('.service-slide');
-  
+  const serviceSlides: any[] = gsap.utils.toArray(".service-slide");
+
   const servicesTl = gsap.timeline({
     scrollTrigger: {
       trigger: "#services-master-container",
       start: "top top",
       end: "bottom bottom",
-      scrub: 1
-    }
+      scrub: 1,
+    },
   });
 
-  // THE FIX: Eliminated the empty `1.5` duration wait! 
+  // THE FIX: Eliminated the empty `1.5` duration wait!
   // It now immediately begins a smooth crossfade over the fading reviews.
   servicesTl.to(serviceSlides[0], { autoAlpha: 1, duration: 1.0 });
-  
+
   for (let i = 1; i < serviceSlides.length; i++) {
     servicesTl.to({}, { duration: 0.8 });
-    servicesTl.to(serviceSlides[i-1], { autoAlpha: 0, scale: 0.95, duration: 1, ease: "sine.inOut" }, `fade${i}`);
-    
-    servicesTl.fromTo(serviceSlides[i], 
-      { scale: 1.02 }, 
-      { autoAlpha: 1, scale: 1, pointerEvents: "auto", duration: 2.5, ease: "sine.inOut" }, 
-      `fade${i}`
+    servicesTl.to(
+      serviceSlides[i - 1],
+      { autoAlpha: 0, scale: 0.95, duration: 1, ease: "sine.inOut" },
+      `fade${i}`,
+    );
+
+    servicesTl.fromTo(
+      serviceSlides[i],
+      { scale: 1.02 },
+      {
+        autoAlpha: 1,
+        scale: 1,
+        pointerEvents: "auto",
+        duration: 2.5,
+        ease: "sine.inOut",
+      },
+      `fade${i}`,
     );
   }
 
   servicesTl.to({}, { duration: 1.0 });
-  
+
   // ==========================================
   // NAVBAR AUTO-HIDE FOR SERVICES
   // ==========================================
-  const mainNavbar = document.getElementById('main-navbar');
-  
+  const mainNavbar = document.getElementById("main-navbar");
+
   if (mainNavbar) {
     ScrollTrigger.create({
       trigger: "#services-master-container",
       start: "top top",
       end: "bottom bottom",
       // Slides up and fades out when entering the services
-      onEnter: () => gsap.to(mainNavbar, { autoAlpha: 0, yPercent: -100, duration: 0.4, ease: "power2.inOut" }),
+      onEnter: () =>
+        gsap.to(mainNavbar, {
+          autoAlpha: 0,
+          yPercent: -100,
+          duration: 0.4,
+          ease: "power2.inOut",
+        }),
       // Slides down and fades in when leaving the bottom (to Contact)
-      onLeave: () => gsap.to(mainNavbar, { autoAlpha: 1, yPercent: 0, duration: 0.4, ease: "power2.inOut" }),
+      onLeave: () =>
+        gsap.to(mainNavbar, {
+          autoAlpha: 1,
+          yPercent: 0,
+          duration: 0.4,
+          ease: "power2.inOut",
+        }),
       // Slides up and fades out when scrolling backward into the services from Contact
-      onEnterBack: () => gsap.to(mainNavbar, { autoAlpha: 0, yPercent: -100, duration: 0.4, ease: "power2.inOut" }),
+      onEnterBack: () =>
+        gsap.to(mainNavbar, {
+          autoAlpha: 0,
+          yPercent: -100,
+          duration: 0.4,
+          ease: "power2.inOut",
+        }),
       // Slides down and fades in when scrolling backward out of services (to Reviews)
-      onLeaveBack: () => gsap.to(mainNavbar, { autoAlpha: 1, yPercent: 0, duration: 0.4, ease: "power2.inOut" })
+      onLeaveBack: () =>
+        gsap.to(mainNavbar, {
+          autoAlpha: 1,
+          yPercent: 0,
+          duration: 0.4,
+          ease: "power2.inOut",
+        }),
     });
   }
 </script>

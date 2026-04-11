@@ -1,0 +1,177 @@
+[
+    {
+        "slug": "body-paint",
+        "title": "Body & Paint",
+        "heroTagline": "Concours-Quality Surface Preparation & Finishing",
+        "description": "Flawless surface preparation and period-correct color matching for a concours-quality finish.",
+        "heroImage": "/Blue-400GT-rear-scaled-1.jpg",
+        "tintColor": "#800000",
+        "deepTextTitle": "The Art of the Perfect Reflection",
+        "deepTextParagraphs": [
+            "At StreetWorks Exotics, a flawless finish begins long before the first drop of paint is atomized. We strip every chassis down to bare metal, meticulously blocking and sanding to ensure the structural lines flow exactly as the original designers intended.",
+            "We specialize in period-correct color matching, utilizing advanced multi-stage clear coats to provide a depth and luster that will command attention on the lawn at Pebble Beach or the open road."
+        ],
+        "midText": "Perfection is not a goal. It is the absolute baseline of our paint shop.",
+        "finalText": "Ready to command attention on the lawn at Pebble Beach?",
+        "galleryImages": [
+            "/body-and-paint-scaled.jpg",
+            "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg",
+            "/DeTomaso-Mangusta-Sunburst-Orange.jpg",
+            "/Isetta-Delivery.jpg",
+            "/Aintree-Green-Iso-Grifo-Series-I.jpg",
+            "/1964-A3:C.jpg",
+            "/Jensen-CV8-Finishing-Assembly-1.jpg",
+            "/Porsche-356-Fresh-out-of-the-paint-booth-1.jpg"
+        ]
+    },
+    {
+        "slug": "coachwork",
+        "title": "Coachwork",
+        "heroTagline": "Resurrecting the Original Lines",
+        "description": "Expert metal shaping and panel restoration to revive the original structural integrity and sweeping lines.",
+        "heroImage": "/Iso-Grifo-Series-I-Receiving-new-nose-1.jpg",
+        "tintColor": "#b45309",
+        "deepTextTitle": "Mastering the Metal",
+        "deepTextParagraphs": [
+            "Coachwork is the foundational soul of any vintage exotic. Whether we are repairing decades of hidden corrosion or fabricating entirely new aluminum body panels from scratch using English wheels and traditional bucks, our metal shop operates with zero compromises.",
+            "We believe in traditional metalworking techniques. We lead-load seams rather than relying on modern fillers, ensuring the structural integrity, weight distribution, and tactile resonance of the chassis remain absolutely authentic."
+        ],
+        "midText": "We don't just shape metal. We resurrect the soul of the machine.",
+        "finalText": "Bring us your bare chassis. We will bring back the legend.",
+        "galleryImages": [
+            "/DeTomaso-Mangusta-Rebody.jpg",
+            "/Fabrication-of-aluminum-hood-skin-over-frame.jpg",
+            "/Ferrari-Cal-Spyder.jpg",
+            "/Iso-Grifo-after-stripping-and-ready-for-metal-shop.jpg",
+            "/Iso-Grifo-Series-I-Receiving-new-nose.jpg",
+            "/Lamborghini-Islero-out-of-metal-shop.jpg",
+            "/A3C Coachwork.jpg",
+            "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"
+        ]
+    },
+    {
+        "slug": "interior",
+        "title": "Interior & Upholstery",
+        "heroTagline": "Bespoke Cabins Tailored to Perfection",
+        "description": "Hand-stitched leathers, period-accurate fabrics, and bespoke cabin restorations tailored to perfection.",
+        "heroImage": "/400-GT-interior-scaled-1.jpg",
+        "tintColor": "#1e3a8a",
+        "deepTextTitle": "Tactile Authenticity",
+        "deepTextParagraphs": [
+            "The cabin is where the driver connects with the machine. We source the finest New Old Stock (NOS) materials, from correct Connolly leathers to Wilton wool carpets, ensuring every scent, texture, and stitch mirrors the day the car left the factory.",
+            "Our upholstery masters rebuild seat frames, re-foam bolsters to exact densities, and hand-stitch every panel. Whether restoring a minimalist racing bucket or a luxurious grand tourer cabin, the resulting environment is nothing short of a sensory masterpiece."
+        ],
+        "midText": "Tactile authenticity down to the very last hand-stitched seam.",
+        "finalText": "Step inside a cabin crafted for the absolute purist.",
+        "galleryImages": [
+            "/Iso-Interiors.jpg",
+            "/A3C Interior.jpg",
+            "/Bizzarini.jpg",
+            "/32-Hot-Rod-Custom-Interior.jpg",
+            "/Ferrari-Upholstery-scaled-1.jpg",
+            "/Islero-S-upholstery-scaled-1.jpg",
+            "/Lamborghini-Countach.jpg",
+            "/Jensen-CV8.jpg"
+        ]
+    },
+    {
+        "slug": "mechanical",
+        "title": "Mechanical & Electrical",
+        "heroTagline": "The Heartbeat of the Machine",
+        "description": "Precision engine rebuilds and modern wiring solutions hidden gracefully beneath vintage aesthetics.",
+        "heroImage": "/Lamborghini-V12-Sidedraft-Weber-Carburetors.jpg",
+        "tintColor": "#14532d",
+        "deepTextTitle": "Symphony of Engineering",
+        "deepTextParagraphs": [
+            "A restoration is only as good as its heart. Our mechanical department specializes in the complete teardown and rebuilding of complex powerplants, from flat-sixes to quad-cam V12s. We meticulously balance rotating assemblies, tune sidedraft Weber carburetors, and optimize drivability.",
+            "Simultaneously, we address the notorious gremlins of vintage electrical systems. We build bespoke wiring harnesses utilizing modern, reliable core materials, all while wrapping them in period-correct loom tape so the engine bay remains visually authentic."
+        ],
+        "midText": "Where raw vintage power meets modern, uncompromising reliability.",
+        "finalText": "Let us rebuild the heartbeat of your exotic.",
+        "galleryImages": [
+            "/Weber-II-2-scaled-1.jpg",
+            "/Electrical-components-restored-to-the-highest-level-of-detail.jpg",
+            "/Lamborghini-Countach-AC-Condenser.jpg",
+            "/Lamborghini-V12-engine-on-test-stand.jpg",
+            "/Bosch-Alt-I-scaled-1.jpg",
+            "/Engine-Work.jpg",
+            "/Ford-Engine.jpg",
+            "/QV5000-Downdraft-Countach.jpg"
+        ]
+    },
+    {
+        "slug": "fabrication",
+        "title": "Custom Welding & Fabrication",
+        "heroTagline": "Engineering Without Limits",
+        "description": "Bespoke metalwork and expert TIG/MIG welding for chassis repair, strengthening, and custom modifications.",
+        "heroImage": "/weld-promo-photo2.jpg",
+        "tintColor": "#52525b",
+        "deepTextTitle": "Forged in Fire",
+        "deepTextParagraphs": [
+            "When replacement parts no longer exist, we build them. Our fabrication bay is equipped to reverse-engineer and manufacture obsolete components, utilizing advanced TIG and MIG welding techniques to ensure welds are structurally superior and aesthetically invisible.",
+            "From custom stainless steel header fabrication that breathes life into tuned engines to chassis strengthening for restomods, our bespoke metalwork bridges the gap between classic design and modern performance."
+        ],
+        "midText": "If a replacement part cannot be found, it must be forged.",
+        "finalText": "Engineering without limits. Let's build something bespoke.",
+        "galleryImages": [
+            "/Custom-Welding-I.jpg",
+            "/Custom-stainless-header-fabrication.compressed-scaled.jpg",
+            "/Custom-Tooling.jpg",
+            "/Welding-Tool.jpg",
+            "/Custom-Welding-I.jpg",
+            "/Custom-stainless-header-fabrication.compressed-scaled.jpg",
+            "/Custom-Tooling.jpg",
+            "/Welding-Tool.jpg"
+        ]
+    },
+    {
+        "slug": "maintenance",
+        "title": "Service & Maintenance",
+        "heroTagline": "Preserving the Drive",
+        "description": "Routine care, tuning, and expert diagnostics to keep your post-war exotics running flawlessly.",
+        "heroImage": "/Automobile-Service-and-Maintenance-in-Pewaukee.jpg",
+        "tintColor": "#94a3b8",
+        "deepTextTitle": "Engineered Longevity",
+        "deepTextParagraphs": [
+            "Vintage cars were built to be driven, and keeping them on the road requires a specialized touch. We offer comprehensive service and maintenance programs tailored specifically to post-war exotics, ensuring every mechanical system operates at peak efficiency.",
+            "From seasonal fluid flushes and valve lash adjustments to deep diagnostic tune-ups, our routine care protects your investment and guarantees that your vehicle is always ready when you turn the key."
+        ],
+        "midText": "Post-war exotics were built to be driven. We ensure they never stop.",
+        "finalText": "Protect your investment with uncompromising care.",
+        "galleryImages": [
+            "/body-and-paint-scaled.jpg",
+            "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg",
+            "/DeTomaso-Mangusta-Sunburst-Orange.jpg",
+            "/Isetta-Delivery.jpg",
+            "/Iso-Grifo-Series-I-Receiving-new-nose.jpg",
+            "/Lamborghini-Islero-out-of-metal-shop.jpg",
+            "/A3C Coachwork.jpg",
+            "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"
+        ]
+    },
+    {
+        "slug": "detailing",
+        "title": "Detailing Service",
+        "heroTagline": "Uncompromising Preservation",
+        "description": "Museum-grade paint correction, preservation, and deep cleaning to elevate your vehicle's presentation.",
+        "heroImage": "/Automotive-Detailing-in-Pewaukee.jpg",
+        "tintColor": "#800000",
+        "deepTextTitle": "The Final Polish",
+        "deepTextParagraphs": [
+            "Detailing a classic car is an exercise in preservation. We employ museum-grade paint correction techniques, carefully measuring clear coat depth and safely removing years of swirl marks and imperfections without jeopardizing original paintwork.",
+            "We utilize premium ceramic coatings and traditional carnauba waxes to seal and protect the finish. From deep engine bay cleaning to delicate leather conditioning, our detailing service elevates the presentation of your vehicle to concours standards."
+        ],
+        "midText": "Museum-grade preservation for the most demanding collectors.",
+        "finalText": "Experience the ultimate expression of automotive beauty.",
+        "galleryImages": [
+            "/body-and-paint-scaled.jpg",
+            "/Celeste-Chiaro-Maserati-Ghibli-SS.jpg",
+            "/DeTomaso-Mangusta-Sunburst-Orange.jpg",
+            "/Isetta-Delivery.jpg",
+            "/Iso-Grifo-Series-I-Receiving-new-nose.jpg",
+            "/Lamborghini-Islero-out-of-metal-shop.jpg",
+            "/A3C Coachwork.jpg",
+            "/Lancia-Fulvia-Series-II-Coupe-coachwork-scaled-1.jpg"
+        ]
+    }
+]

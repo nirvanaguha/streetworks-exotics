@@ -1,0 +1,49 @@
+---
+interface Props {
+    images: string[];
+}
+
+const { images } = Astro.props;
+---
+
+<section class="relative w-full bg-[#050505] pb-32 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 service-gallery-wrapper"
+        >
+            <div class="flex flex-col gap-8 md:gap-16 gallery-col-left">
+                {
+                    images
+                        .filter((_, i) => i % 2 === 0)
+                        .map((img) => (
+                            <div class="service-gallery-item relative rounded-xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
+                                <img
+                                    src={img}
+                                    alt="Service detail"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                        ))
+                }
+            </div>
+
+            <div
+                class="flex flex-col gap-8 md:gap-16 md:mt-32 gallery-col-right"
+            >
+                {
+                    images
+                        .filter((_, i) => i % 2 !== 0)
+                        .map((img) => (
+                            <div class="service-gallery-item relative rounded-xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
+                                <img
+                                    src={img}
+                                    alt="Service detail"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                        ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
