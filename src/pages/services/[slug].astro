@@ -36,7 +36,7 @@ const { service } = Astro.props;
             />
         </div>
 
-        <div class="relative z-20 bg-black">
+        <div class="relative z-20 bg-[#050505]">
             <ServiceGallery images={service.galleryImages} />
         </div>
 
@@ -44,7 +44,7 @@ const { service } = Astro.props;
             service.midText && (
                 <div
                     id="mid-text-container"
-                    class="relative w-full h-[250dvh] bg-black z-10 -mt-[100dvh]"
+                    class="relative w-full h-[350dvh] bg-[#050505] z-10 -mt-[100dvh]"
                 >
                     <div class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center">
                         <div
@@ -63,7 +63,7 @@ const { service } = Astro.props;
             )
         }
 
-        <div class="relative z-30 bg-black">
+        <div class="relative z-20 bg-black -mt-[100dvh]">
             <ReviewsSection />
         </div>
 
@@ -71,7 +71,7 @@ const { service } = Astro.props;
             service.finalText && (
                 <div
                     id="final-text-container"
-                    class="relative w-full h-[250dvh] bg-black z-10 -mt-[100dvh]"
+                    class="relative w-full h-[350dvh] bg-black z-10 -mt-[100dvh]"
                 >
                     <div class="sticky top-0 w-full h-[100dvh] overflow-hidden z-10 flex items-center justify-center">
                         <div
@@ -90,7 +90,7 @@ const { service } = Astro.props;
             )
         }
 
-        <div class="relative z-20 bg-black">
+        <div class="relative z-20 bg-black -mt-[100dvh]">
             <ContactSection />
         </div>
 
@@ -167,13 +167,13 @@ const { service } = Astro.props;
             });
         }
 
-        // 4. MID TEXT TIMELINE
+        // 4. MID TEXT TIMELINE (Perfected Fade from Black)
         const midContainer = document.getElementById("mid-text-container");
         if (midContainer) {
             const midTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: midContainer,
-                    // THE FIX: Wait until the previous section has cleared before doing anything!
+                    // Waits exactly 100vh for the Gallery (z-20) to slide off the screen before triggering
                     start: "100vh top",
                     end: "bottom bottom",
                     scrub: 1,
@@ -197,14 +197,19 @@ const { service } = Astro.props;
                 0.1,
             );
 
-            midTl.to({}, { duration: 2.0 }); // The hold
+            // Hold the fully lit text on the black screen
+            midTl.to({}, { duration: 1.5 });
 
+            // Fade the text cleanly out to black
             midTl.to("#mid-text-reveal", {
                 autoAlpha: 0,
                 scale: 0.95,
                 duration: 0.6,
             });
             midTl.to("#mid-text-layer", { autoAlpha: 0, duration: 0.1 });
+
+            // Crucial: A brief dead zone so the screen remains perfectly black as the Reviews section (z-20) starts sliding up
+            midTl.to({}, { duration: 0.8 });
         }
 
         // 5. HORIZONTAL REVIEWS MATH
@@ -246,7 +251,6 @@ const { service } = Astro.props;
             const finalTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: finalContainer,
-                    // THE FIX: Applied the 100vh delay here too
                     start: "100vh top",
                     end: "bottom bottom",
                     scrub: 1,
@@ -270,7 +274,7 @@ const { service } = Astro.props;
                 0.1,
             );
 
-            finalTl.to({}, { duration: 2.0 }); // The hold
+            finalTl.to({}, { duration: 1.5 });
 
             finalTl.to("#final-text-reveal", {
                 autoAlpha: 0,
@@ -278,6 +282,8 @@ const { service } = Astro.props;
                 duration: 0.6,
             });
             finalTl.to("#final-text-layer", { autoAlpha: 0, duration: 0.1 });
+
+            finalTl.to({}, { duration: 0.8 });
         }
     </script>
 </Layout>
